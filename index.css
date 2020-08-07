@@ -1,0 +1,527 @@
+@import url("https://fonts.googleapis.com/css?family=Signika:600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Saira+Condensed:700&display=swap");
+/* General -----------------------------------------------------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Signika", sans-serif;
+  font-size: 125%;
+  color: #f0f0f0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.rowed {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.columnated {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pseudoImg {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center bottom;
+}
+
+/* Color Universals --------------------------------------------------------------------------------*/
+/* Spaces */
+.darkGreySpace {
+  color: #f0f0f0;
+  background-color: #303030;
+}
+
+.pinkSpace {
+  color: #303030;
+  background-color: #f768d7;
+}
+
+.whiteSpace {
+  color: #303030;
+  background-color: #f0f0f0;
+}
+
+.whiteSpace p, .pinkSpace p {
+  color: #303030;
+}
+
+/* Texts */
+.darkGreyText {
+  color: #303030;
+}
+
+.pinkText {
+  color: #f768d7;
+}
+
+.pinkHighlight {
+  background-color: #f768d7;
+}
+
+/* Selections */
+*::selection {
+  color: #303030;
+  background-color: #f768d7;
+}
+
+.pinkSpace *::selection, .pinkSpace::selection, .pinkHighlight::selection {
+  color: #f768d7;
+  background-color: #303030;
+}
+
+.darkGreyText::selection, .pinkText::selection {
+  color: #f0f0f0;
+}
+
+/* Logo --------------------------------------------------------------------------------------------*/
+.logoDuckie {
+  background-image: url("logo_white.svg");
+}
+
+/* Vanilla Title */
+.logoTitle {
+  font-family: "Saira Condensed", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.logoTitle span {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar ----------------------------------------------------------------------------------*/
+#navBar {
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 3em;
+  background-color: #303030;
+  border-top: 0.2em solid;
+  border-color: #f768d7;
+  z-index: 1;
+}
+
+#navButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 3em;
+  color: #f768d7;
+  text-decoration: none;
+}
+
+#navAway {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  width: 100vw;
+  height: 150vh;
+  top: 0;
+  transition-property: visibility, opacity;
+  transition-duration: 0.25s;
+  z-index: 2;
+}
+
+#navMenu {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  height: 3em;
+  top: 0;
+  transition-property: margin-left, visibility;
+  transition-duration: 0.25s;
+  z-index: 3;
+}
+#navMenu #navHome span {
+  font-size: 1.1em;
+}
+#navMenu #navHome:hover span.pinkText, #navMenu #navHome:active span.pinkText {
+  color: #f0f0f0;
+}
+#navMenu #orgLink .pseudoImg {
+  background-image: url("pixel_quack.png");
+  width: 2.1em;
+  height: 1.5em;
+}
+#navMenu a {
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+}
+#navMenu a:link, #navMenu a:visited {
+  color: #f0f0f0;
+}
+#navMenu a:hover, #navMenu a:active, #navMenu #orgLink:link, #navMenu #orgLink:visited {
+  color: #303030;
+  background-color: #f768d7;
+}
+
+/* Front Page & Graphic -----------------------------------------------------------------------------*/
+#frontPage {
+  width: 100%;
+  height: 100vh;
+}
+
+#navSpace {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 100%;
+  height: 3.2em;
+}
+
+#graphic {
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-shrink: 1;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 4vh;
+  padding: 0 1em;
+  background-image: url("view.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 70%;
+}
+#graphic .spacer {
+  height: 1em;
+}
+#graphic * {
+  flex-grow: 0;
+}
+#graphic .logoDuckie {
+  flex-grow: 1;
+  width: 50%;
+  height: 50%;
+  max-width: 40vh;
+  max-height: 40vh;
+}
+#graphic .logoTitle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  font-size: 225%;
+}
+#graphic .logoTitle span {
+  max-width: 50%;
+}
+#graphic .bigButton:link, #graphic .bigButton:visited, #graphic .bigButton:hover, #graphic .bigButton:active {
+  color: #303030;
+  background-color: #f768d7;
+  text-decoration: none;
+}
+#graphic .bigButton div {
+  width: 40vw;
+  max-width: 500px;
+  padding: 0.5em 0;
+  font-size: 100%;
+  text-align: center;
+}
+
+/* Jumpable ----------------------------------------------------------------------------------------*/
+#main .section {
+  position: relative;
+}
+
+.jumpable {
+  position: absolute;
+  top: -3.2em;
+}
+
+/* Content -----------------------------------------------------------------------------------------*/
+#main {
+  width: 100%;
+}
+#main h1 {
+  margin: 0;
+  padding: 0.2em 0 0.05em 0;
+  font-size: 2em;
+}
+#main h2 {
+  margin: 0;
+  padding: 0.75em 0 0.05em 0;
+  font-size: 1.25em;
+}
+#main p {
+  padding: 0.2em 0;
+  margin: 0;
+}
+#main .section {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.5em 0;
+}
+#main .section .container {
+  box-sizing: border-box;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0.4em 1em;
+}
+#main .spacer {
+  width: 100%;
+  height: 2em;
+}
+#main .spacer .slanted {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+/* FAQ Section ---------------------------------------------------------------------------------------*/
+#main .faqSpace h1 {
+  text-align: center;
+}
+
+#main .faqList {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+#main .faqList .faqColumn {
+  width: 40%;
+  margin: 0 0.5em;
+}
+
+#main .faQuestion {
+  box-sizing: border-box;
+  display: block;
+  margin: 0.5em 0;
+  width: 100%;
+  border: 0.2em solid #f768d7;
+  border-radius: 5px;
+}
+#main .faQuestion input {
+  display: none;
+}
+#main .faQuestion .faqHeader {
+  padding: 0.5em;
+}
+#main .faQuestion .faqArrow {
+  display: flex;
+  justify-content: center;
+  background-color: #f768d7;
+}
+#main .faQuestion .faqArrow * {
+  transition-property: transform, color;
+  transition-duration: 0.25s;
+}
+#main .faQuestion .faqContent {
+  overflow: hidden;
+  max-height: 0;
+  transition-property: max-height;
+  transition-duration: 0.25s;
+  transition-timing-function: linear;
+}
+#main .faQuestion .faqContent p {
+  display: block;
+  padding: 0.5em;
+}
+#main .faQuestion input:checked + .faqArrow * {
+  color: #f0f0f0;
+  transform: rotate(180deg);
+}
+#main .faQuestion input:checked + .faqArrow + .faqContent {
+  max-height: 15em;
+}
+
+#main .faQuestion:hover {
+  cursor: pointer;
+}
+#main .faQuestion:hover .faqArrow * {
+  color: #f0f0f0;
+}
+
+/* Get Involved Section ------------------------------------------------------------------------------*/
+#graphic .actionButton, #main .involvementSpace .actionButton {
+  max-width: 60%;
+  margin: 1em auto 0.5em auto;
+  border-radius: 5px;
+}
+#graphic .actionButton div, #main .involvementSpace .actionButton div {
+  width: 40vw;
+  max-width: 100%;
+  padding: 0.5em 0;
+  font-size: 100%;
+  text-align: center;
+}
+#graphic .actionButton h2, #main .involvementSpace .actionButton h2 {
+  padding: 0;
+  margin: 0;
+}
+#graphic .actionButton:link, #graphic .actionButton:visited, #main .involvementSpace .actionButton:link, #main .involvementSpace .actionButton:visited {
+  color: #303030;
+  background-color: #f0f0f0;
+}
+#graphic .actionButton:hover, #graphic .actionButton:active, #main .involvementSpace .actionButton:hover, #main .involvementSpace .actionButton:active {
+  color: #f0f0f0;
+  background-color: #303030;
+}
+
+#graphic .actionButton {
+  margin-top: auto;
+}
+
+/* Contact List --------------------------------------------------------------------------------------*/
+#main .section.contactSpace, #main .section.contactSpace .container {
+  padding: 0;
+}
+
+#contactList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 200%;
+}
+#contactList a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 2.5em;
+  height: 2.5em;
+}
+#contactList a:link, #contactList a:visited {
+  color: #f0f0f0;
+}
+#contactList a:hover, #contactList a:active {
+  color: #303030;
+  background-color: #f768d7;
+}
+
+/* Responsive Design! ------------------------------------------------------------------------------------*/
+/* Small or Tall Screens */
+@media only screen and (max-width: 1000px), only screen and (max-aspect-ratio: 1/1) {
+  body {
+    font-size: 150%;
+  }
+
+  /* Only display button now */
+  #navButton {
+    display: flex;
+  }
+
+  /* Nav Away, for closing Nav Menu */
+  #navBar {
+    /* Modified Vertical Nav Menu */
+  }
+  #navBar #navAway {
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  #navBar #navMenu {
+    visibility: hidden;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: -70vw;
+    width: 70vw;
+    height: 150vh;
+    font-size: 1.3em;
+    background-color: #f0f0f0;
+  }
+
+  #navBar:target #navAway {
+    visibility: visible;
+    opacity: 1;
+  }
+  #navBar:target #navMenu {
+    visibility: visible;
+    margin-left: 0;
+  }
+
+  /* Link Stylization */
+  #navMenu a {
+    padding: 0.4em 0.8em;
+  }
+  #navMenu a:link, #navMenu a:visited {
+    color: #303030;
+  }
+  #navMenu a:hover, #navMenu a:active {
+    color: #303030;
+    background-color: #f768d7;
+  }
+
+  /* Graphic Duckie Resize */
+  #graphic .logoDuckie {
+    width: 70%;
+    height: 70%;
+    max-width: 80vh;
+    max-height: 80vh;
+  }
+  #graphic .logoTitle {
+    font-size: 14vw;
+  }
+  #graphic div {
+    font-size: 6vw;
+  }
+
+  /* Main Content Width Changes */
+  #main .section .container {
+    padding: 0.3em 2em;
+    width: 100%;
+  }
+
+  #main .faqList .faqColumn {
+    width: 80%;
+  }
+}
+/* Tall Screens */
+@media only screen and (max-aspect-ratio: 1/1) {
+  #navBar {
+    height: 4em;
+  }
+
+  .jumpable {
+    top: -4.2em;
+  }
+
+  #navButton {
+    width: 4em;
+  }
+
+  #navSpace {
+    height: 4.2em;
+  }
+}
+/* Super Tiny Screens ------------------------------------------------------------------------------*/
+@media only screen and (max-width: 500px) {
+  #main .section .container {
+    padding: 0.3em 1em;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
