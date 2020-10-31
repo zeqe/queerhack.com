@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Signika:600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Signika:500&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Saira+Condensed:700&display=swap");
 /* General -----------------------------------------------------------------------------------------*/
 html {
@@ -10,7 +10,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: "Signika", sans-serif;
-  font-size: 125%;
+  font-size: 1rem;
   color: #f0f0f0;
 }
 
@@ -57,10 +57,6 @@ a {
   background-color: #f0f0f0;
 }
 
-.whiteSpace p, .pinkSpace p {
-  color: #303030;
-}
-
 /* Texts */
 .darkGreyText {
   color: #303030;
@@ -68,6 +64,10 @@ a {
 
 .pinkText {
   color: #f768d7;
+}
+
+.whiteText {
+  color: #f0f0f0;
 }
 
 .pinkHighlight {
@@ -91,7 +91,7 @@ a {
 
 /* Logo --------------------------------------------------------------------------------------------*/
 .logoDuckie {
-  background-image: url("logo_white.svg");
+  background-image: url("lined_duck.png");
 }
 
 /* Vanilla Title */
@@ -107,17 +107,21 @@ a {
   padding: 0;
 }
 
-/* Navigation Bar ----------------------------------------------------------------------------------*/
-#navBar {
-  display: block;
+/* Scrolling Header ----------------------------------------------------------------------------------*/
+#scrollingHeader {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 3em;
-  background-color: #303030;
-  border-top: 0.2em solid;
-  border-color: #f768d7;
   z-index: 1;
+}
+
+#navBar {
+  display: block;
+  position: relative;
+  height: 3.5rem;
+  background-color: #303030;
+  border-top: 0.2rem solid;
+  border-color: #f768d7;
 }
 
 #navButton {
@@ -125,7 +129,7 @@ a {
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 3em;
+  width: 3.5rem;
   color: #f768d7;
   text-decoration: none;
 }
@@ -150,8 +154,9 @@ a {
   justify-content: center;
   align-items: stretch;
   width: 100%;
-  height: 3em;
+  height: 3.5rem;
   top: 0;
+  font-size: 1.25rem;
   transition-property: margin-left, visibility;
   transition-duration: 0.25s;
   z-index: 3;
@@ -170,7 +175,7 @@ a {
 #navMenu a {
   display: flex;
   align-items: center;
-  padding: 0 1em;
+  padding: 0 1.25rem;
 }
 #navMenu a:link, #navMenu a:visited {
   color: #f0f0f0;
@@ -178,6 +183,37 @@ a {
 #navMenu a:hover, #navMenu a:active, #navMenu #orgLink:link, #navMenu #orgLink:visited {
   color: #303030;
   background-color: #f768d7;
+}
+
+#covid19Update {
+  position: relative;
+  align-items: stretch;
+  background-color: #ff4a4a;
+}
+#covid19Update #c19UState {
+  display: none;
+}
+#covid19Update #c19UText {
+  padding: 0.75em;
+}
+#covid19Update #c19UDismissal {
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+}
+#covid19Update #c19UDismissal:hover {
+  background-color: #c73a3a;
+}
+#covid19Update #c19UState:checked ~ #c19UText {
+  display: none;
+}
+#covid19Update #c19UState:checked ~ #c19UDismissal {
+  display: none;
+}
+
+#covid19Update::selection, #covid19Update *::selection {
+  color: #ff4a4a;
+  background-color: #f0f0f0;
 }
 
 /* Front Page & Graphic -----------------------------------------------------------------------------*/
@@ -190,7 +226,7 @@ a {
   flex-grow: 0;
   flex-shrink: 0;
   width: 100%;
-  height: 3.2em;
+  height: 3.7rem;
 }
 
 #graphic {
@@ -203,7 +239,7 @@ a {
   height: 100%;
   font-size: 4vh;
   padding: 0 1em;
-  background-image: url("view.png");
+  background-image: url("view_l.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 70%;
@@ -215,9 +251,8 @@ a {
   flex-grow: 0;
 }
 #graphic .logoDuckie {
-  flex-grow: 1;
-  width: 50%;
-  height: 50%;
+  width: 260px;
+  height: 200px;
   max-width: 40vh;
   max-height: 40vh;
 }
@@ -253,12 +288,13 @@ a {
 
 .jumpable {
   position: absolute;
-  top: -3.2em;
+  top: -3.7rem;
 }
 
 /* Content -----------------------------------------------------------------------------------------*/
 #main {
   width: 100%;
+  overflow: hidden;
 }
 #main h1 {
   margin: 0;
@@ -296,6 +332,14 @@ a {
   -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%);
 }
 
+/* Event Section -------------------------------------------------------------------------------------*/
+#eventList .eventTitle {
+  padding-top: 0.25em;
+}
+#eventList .eventDeets {
+  text-indent: 1em;
+}
+
 /* FAQ Section ---------------------------------------------------------------------------------------*/
 #main .faqSpace h1 {
   text-align: center;
@@ -318,7 +362,7 @@ a {
   display: block;
   margin: 0.5em 0;
   width: 100%;
-  border: 0.2em solid #f768d7;
+  border: 0.2rem solid #f768d7;
   border-radius: 5px;
 }
 #main .faQuestion input {
@@ -347,12 +391,15 @@ a {
   display: block;
   padding: 0.5em;
 }
+#main .faQuestion .faqContent a, #main .faQuestion .faqContent a:link, #main .faQuestion .faqContent a:visited, #main .faQuestion .faqContent a:hover, #main .faQuestion .faqContent a:active {
+  color: #f768d7;
+}
 #main .faQuestion input:checked + .faqArrow * {
   color: #f0f0f0;
   transform: rotate(180deg);
 }
 #main .faQuestion input:checked + .faqArrow + .faqContent {
-  max-height: 15em;
+  max-height: 20em;
 }
 
 #main .faQuestion:hover {
@@ -367,6 +414,8 @@ a {
   max-width: 60%;
   margin: 1em auto 0.5em auto;
   border-radius: 5px;
+  color: #303030;
+  background-color: #f0f0f0;
 }
 #graphic .actionButton div, #main .involvementSpace .actionButton div {
   width: 40vw;
@@ -387,14 +436,258 @@ a {
   color: #f0f0f0;
   background-color: #303030;
 }
+#graphic .smolButton div, #main .involvementSpace .smolButton div {
+  width: 20vw;
+  max-width: 90%;
+}
 
 #graphic .actionButton {
   margin-top: auto;
 }
 
+#main .involvementSpace {
+  /* MailChimp Form Embed Code - Classic - 12/17/2015 v10.7 */
+}
+#main .involvementSpace #mc_embed_signup {
+  background: #fff;
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
+}
+#main .involvementSpace #mc_embed_signup form {
+  display: block;
+  position: relative;
+  text-align: left;
+  padding: 10px 0 10px 3%;
+}
+#main .involvementSpace #mc_embed_signup h2 {
+  font-weight: bold;
+  padding: 0;
+  margin: 15px 0;
+  font-size: 1.4em;
+}
+#main .involvementSpace #mc_embed_signup input {
+  border: 1px solid #ABB0B2;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+#main .involvementSpace #mc_embed_signup input[type=checkbox] {
+  -webkit-appearance: checkbox;
+}
+#main .involvementSpace #mc_embed_signup input[type=radio] {
+  -webkit-appearance: radio;
+}
+#main .involvementSpace #mc_embed_signup input:focus {
+  border-color: #333;
+}
+#main .involvementSpace #mc_embed_signup .button {
+  clear: both;
+  background-color: #aaa;
+  border: 0 none;
+  border-radius: 4px;
+  transition: all 0.23s ease-in-out 0s;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: normal;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 5px 10px 0;
+  padding: 0 22px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: auto;
+}
+#main .involvementSpace #mc_embed_signup .button:hover {
+  background-color: #777;
+}
+#main .involvementSpace #mc_embed_signup .small-meta {
+  font-size: 11px;
+}
+#main .involvementSpace #mc_embed_signup .nowrap {
+  white-space: nowrap;
+}
+#main .involvementSpace #mc_embed_signup .mc-field-group {
+  clear: left;
+  position: relative;
+  width: 96%;
+  padding-bottom: 3%;
+  min-height: 50px;
+}
+#main .involvementSpace #mc_embed_signup .size1of2 {
+  clear: none;
+  float: left;
+  display: inline-block;
+  width: 46%;
+  margin-right: 4%;
+}
+#main .involvementSpace * html #mc_embed_signup .size1of2 {
+  margin-right: 2%;
+  /* Fix for IE6 double margins. */
+}
+#main .involvementSpace #mc_embed_signup .mc-field-group label {
+  display: block;
+  margin-bottom: 3px;
+}
+#main .involvementSpace #mc_embed_signup .mc-field-group input {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  text-indent: 2%;
+}
+#main .involvementSpace #mc_embed_signup .mc-field-group select {
+  display: inline-block;
+  width: 99%;
+  padding: 5px 0;
+  margin-bottom: 2px;
+}
+#main .involvementSpace #mc_embed_signup .datefield, #main .involvementSpace #mc_embed_signup .phonefield-us {
+  padding: 5px 0;
+}
+#main .involvementSpace #mc_embed_signup .datefield input, #main .involvementSpace #mc_embed_signup .phonefield-us input {
+  display: inline;
+  width: 60px;
+  margin: 0 2px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 5px 0 2px 0;
+}
+#main .involvementSpace #mc_embed_signup .phonefield-us .phonearea input, #main .involvementSpace #mc_embed_signup .phonefield-us .phonedetail1 input {
+  width: 40px;
+}
+#main .involvementSpace #mc_embed_signup .datefield .monthfield input, #main .involvementSpace #mc_embed_signup .datefield .dayfield input {
+  width: 30px;
+}
+#main .involvementSpace #mc_embed_signup .datefield label, #main .involvementSpace #mc_embed_signup .phonefield-us label {
+  display: none;
+}
+#main .involvementSpace #mc_embed_signup .indicates-required {
+  text-align: right;
+  font-size: 11px;
+  margin-right: 4%;
+}
+#main .involvementSpace #mc_embed_signup .asterisk {
+  color: #e85c41;
+  font-size: 150%;
+  font-weight: normal;
+  position: relative;
+  top: 5px;
+}
+#main .involvementSpace #mc_embed_signup .clear {
+  clear: both;
+}
+#main .involvementSpace #mc_embed_signup .mc-field-group.input-group ul {
+  margin: 0;
+  padding: 5px 0;
+  list-style: none;
+}
+#main .involvementSpace #mc_embed_signup .mc-field-group.input-group ul li {
+  display: block;
+  padding: 3px 0;
+  margin: 0;
+}
+#main .involvementSpace #mc_embed_signup .mc-field-group.input-group label {
+  display: inline;
+}
+#main .involvementSpace #mc_embed_signup .mc-field-group.input-group input {
+  display: inline;
+  width: auto;
+  border: none;
+}
+#main .involvementSpace #mc_embed_signup div#mce-responses {
+  float: left;
+  top: -1.4em;
+  padding: 0em 0.5em 0em 0.5em;
+  overflow: hidden;
+  width: 90%;
+  margin: 0 5%;
+  clear: both;
+}
+#main .involvementSpace #mc_embed_signup div.response {
+  margin: 1em 0;
+  padding: 1em 0.5em 0.5em 0;
+  font-weight: bold;
+  float: left;
+  top: -1.5em;
+  z-index: 1;
+  width: 80%;
+}
+#main .involvementSpace #mc_embed_signup #mce-error-response {
+  display: none;
+}
+#main .involvementSpace #mc_embed_signup #mce-success-response {
+  color: #529214;
+  display: none;
+}
+#main .involvementSpace #mc_embed_signup label.error {
+  display: block;
+  float: none;
+  width: auto;
+  margin-left: 1.05em;
+  text-align: left;
+  padding: 0.5em 0;
+}
+#main .involvementSpace #mc-embedded-subscribe {
+  clear: both;
+  width: auto;
+  display: block;
+  margin: 1em 0 1em 5%;
+}
+#main .involvementSpace #mc_embed_signup #num-subscribers {
+  font-size: 1.1em;
+}
+#main .involvementSpace #mc_embed_signup #num-subscribers span {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  margin-right: 0.5em;
+  font-weight: bold;
+}
+#main .involvementSpace #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
+  display: inline-block;
+  margin: 2px 0 1em 0;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.85);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: normal;
+  z-index: 1;
+  color: #e85c41;
+}
+#main .involvementSpace #mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {
+  border: 2px solid #e85c41;
+}
+
+#main .involvementSpace #mc_embed_signup {
+  color: #303030;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+#main .involvementSpace #mc_embed_signup ::selection {
+  color: #303030;
+  background-color: #f768d7;
+}
+#main .involvementSpace #mc_embed_signup input {
+  background-color: #f0f0f0;
+}
+#main .involvementSpace #mc_embed_signup .button, #main .involvementSpace #mc_embed_signup .button:hover {
+  background-color: #f768d7;
+}
+
 /* Contact List --------------------------------------------------------------------------------------*/
 #main .section.contactSpace, #main .section.contactSpace .container {
   padding: 0;
+}
+
+#contactLabel {
+  padding: 0.5em 0;
+  text-align: center;
 }
 
 #contactList {
@@ -403,7 +696,6 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-size: 200%;
 }
 #contactList a {
   display: flex;
@@ -411,6 +703,7 @@ a {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  font-size: 200%;
   width: 2.5em;
   height: 2.5em;
 }
@@ -425,10 +718,6 @@ a {
 /* Responsive Design! ------------------------------------------------------------------------------------*/
 /* Small or Tall Screens */
 @media only screen and (max-width: 1000px), only screen and (max-aspect-ratio: 1/1) {
-  body {
-    font-size: 150%;
-  }
-
   /* Only display button now */
   #navButton {
     display: flex;
@@ -450,7 +739,6 @@ a {
     margin-left: -70vw;
     width: 70vw;
     height: 150vh;
-    font-size: 1.3em;
     background-color: #f0f0f0;
   }
 
@@ -476,9 +764,10 @@ a {
   }
 
   /* Graphic Duckie Resize */
+  #graphic {
+    background-image: url("view_m.png");
+  }
   #graphic .logoDuckie {
-    width: 70%;
-    height: 70%;
     max-width: 80vh;
     max-height: 80vh;
   }
@@ -487,6 +776,9 @@ a {
   }
   #graphic div {
     font-size: 6vw;
+  }
+  #graphic .smolButton div {
+    width: 50vw;
   }
 
   /* Main Content Width Changes */
@@ -502,23 +794,27 @@ a {
 /* Tall Screens */
 @media only screen and (max-aspect-ratio: 1/1) {
   #navBar {
-    height: 4em;
+    height: 4rem;
   }
 
   .jumpable {
-    top: -4.2em;
+    top: -4.2rem;
   }
 
   #navButton {
-    width: 4em;
+    width: 4rem;
   }
 
   #navSpace {
-    height: 4.2em;
+    height: 4.2rem;
   }
 }
 /* Super Tiny Screens ------------------------------------------------------------------------------*/
 @media only screen and (max-width: 500px) {
+  #graphic {
+    background-image: url("view_s.png");
+  }
+
   #main .section .container {
     padding: 0.3em 1em;
   }

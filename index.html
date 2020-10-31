@@ -12,29 +12,40 @@
 	</head>
 	
 	<body>
-		<div id="navBar">
-			<a href="#navBar" id="navButton">
-				<i class="fas fa-bars"></i>
-			</a>
-			
-			<a href="#navAway" id="navAway"></a>
-			
-			<div id="navMenu">
-				<a id="navHome" href="#">
-					<div class="logoTitle">
-						<span class="pinkText">queer</span><span class="greyText">_hack</span>
-					</div>
+		<div id="scrollingHeader">
+			<div id="navBar">
+				<a href="#navBar" id="navButton">
+					<i class="fas fa-bars"></i>
 				</a>
 				
-				<a href="#about">About</a>
-				<a href="#purpose">Purpose</a>
-				<a href="#faq">FAQ</a>
-				<a href="#get-involved">Get Involved</a>
-				<a href="#contact">Contact</a>
+				<a href="#navAway" id="navAway"></a>
 				
-				<a id="orgLink" href="more_than_a_hackathon.html">
-					<div class="pseudoImg"></div>
-				</a>
+				<div id="navMenu">
+					<a id="navHome" href="#">
+						<div class="logoTitle">
+							<span class="pinkText">queer</span><span class="greyText">_hack</span>
+						</div>
+					</a>
+					
+					<a href="#about">About</a>
+					<a href="#events">Events</a>
+					<a href="#faq">FAQ</a>
+					<a href="#join">Join</a>
+					<a href="#contact">Contact</a>
+					
+					<!--
+					<a id="orgLink" href="more_than_a_hackathon.html">
+						<div class="pseudoImg"></div>
+					</a>
+					-->
+				</div>
+			</div>
+			
+			<div id="covid19Update" class="rowed">
+				<input id="c19UState" type="checkbox" autocomplete="off"/>
+				
+				<div id="c19UText">COVID-19 Update: All queer_hack events for Fall 2020 will be held virtually for the safety of all participants.</div>
+				<label id="c19UDismissal" for="c19UState"><i class="fas fa-times"></i></label>
 			</div>
 		</div>
 		
@@ -46,16 +57,20 @@
 			<div id="graphic" class="columnated">
 				<div class="spacer"></div>
 				
+				<div class="logoDuckie pseudoImg"></div>
+				
 				<div class="logoTitle">
-					<span class="darkGreyText">queer</span><span class="greyText">_hack</span>
+					<span class="darkGreyText">queer</span><span class="whiteText">_hack</span>
 				</div>
 				
 				<div>
-					Nov 7-8, 2020
+					2020
 				</div>
 				
-				<a href="#get-involved" class="actionButton columnated">
-					<div>Get Involved!</div>
+				<a href="#join" class="actionButton smolButton columnated">
+					<div>
+						<i class="fas fa-angle-double-down"></i>
+					</div>
 				</a>
 				
 				<div class="spacer"></div>
@@ -73,19 +88,22 @@
 				<div class="container">
 					<h1>About</h1>
 					
-					<p><span class="logoTitle">
-					<span class="pinkText">queer</span><span class="greyText">_hack</span>
-					</span> is an upcoming hackathon for queer students being organized by students at UNC Chapel Hill.</p>
+					<p>
+						<span class="logoTitle"><span class="pinkText">queer</span><span class="darkGreyText">_hack</span></span> is a community for LGBTQ+ students in tech based out of UNC Chapel Hill.
+					</p>
 					
-					<h2>What's a hackathon?</h2>
-					<p>A hackathon is a weekend-long event where people gather to code projects, learn programming skills, network, and have fun! In a timed, highly collaborative environment, real problems are addressed in innovative ways. Hackathons are a great way for students to get a foothold into tech-related fields and gain experience.</p>
+					<h2>Vision</h2>
+					<p>We envision a future with a tech culture that is inclusive and accessible for LGBTQ+ people.</p>
 					
-					<h2>Why queer?</h2>
-					<p>Hackathons can be particularly intimidating and unwelcoming to queer students. Tech classrooms, hackathons, and companies have historically been dominated by cis straight white men. Queer people can feel isolated and excluded in these spaces, which leads to low representation and poor retention of queer students in computer science classrooms.</p>
-					<p><span class="pinkHighlight">We are trying to change the culture of hackathons with the first queer hackathon - a hackathon hosted by and for queer students of all backgrounds.</span></p>
+					<h2>Mission</h2>
+					<p>We aim to empower LGBTQ+ students in tech by fostering peer connections and curating opportunities to grow as a programmer.</p>
+					<p>Our event programming includes skill-building workshops, weekly study groups, social events, career networking opportunities, and an annual hackathon.</p>
 					
-					<h2>Why do we care about queer in tech?</h2>
-					<p>Our world is becoming increasingly defined by the devices in our pockets, our homes, and our workplaces. At the same time, technology is not free from bias; it can mirror and exacerbate the biases of the people who design it. Thus, it is vital that queer people and other marginalized groups be among those creating our digital world of tomorrow.</p>
+					<br>
+					
+					<p>
+						<span class="pinkHighlight">Whether you’re already a Computer Science major or just interested in exploring coding, we’d love for you to join the community.</span>
+					</p>				
 				</div>
 			</div>
 			
@@ -94,20 +112,62 @@
 			</div>
 			
 			<div class="section pinkSpace">
-				<div id="purpose" class="jumpable"></div>
+				<div id="events" class="jumpable"></div>
 				
 				<div class="container">
-					<h1>Our Purpose</h1>
-					<p>We want to empower queer people to succeed in tech fields, build community, and inspire innovation.</p>
+					<h1>Upcoming Events</h1>
+					<p>Sign up for our newsletter and follow our social media accounts to stay updated as we add events to our schedule.</p>
 					
-					<h2>Queer Empowerment</h2>
-					<p>A hackathon provides students with an opportunity to build skills, network, and kickstart innovative projects. This is a space for queer students to jump into the tech field or further the journey they've already begun. Queer students should feel empowered to create and innovate here.</p>
-					
-					<h2>Building Community</h2>
-					<p>As a queer student, it can be tough to feel at home in a typical tech space. We want to smash that feeling! (and the cis white heteropatriarchy!) Students shouldn't be turned away from tech fields simply because they are dominated by people who don't look like them. That's why we aim to build a community of queer entrepreneurs, programers, and code dabblers.</p>
-					
-					<h2>Inspiring Innovation</h2>
-					<p>The programmers of our world design systems vital to our daily lives. We need queer programmers, leaders, project managers, and the like to design queer-friendly systems. Innovation starts with students and our team is working to create a place for that innovation to flourish at UNC.</p>
+					<ul id="eventList">
+						<li>
+							<h2 class="eventTitle whiteText">Weekly Game/Social Night</h2>
+							<p class="eventDeets">September 12, Saturday 7:30pm</p>
+							<p class="eventDeets">September 18, Friday 7:30pm</p>
+							<p class="eventDeets">September 26, Saturday 7:30pm</p>
+							<p class="eventDeets">October 1, Thursday 7:30pm</p>
+							<p class="eventDeets">October 9, Friday 7:30pm</p>
+							<p class="eventDeets">October 17, Saturday 7:30pm</p>
+							<p class="eventDeets">October 22, Thursday 7:30pm</p>
+							<p class="eventDeets">October 29, Thursday 7:30pm</p>
+							<p class="eventDeets">November 6, Friday 7:30pm</p>
+							<p class="eventDeets">November 14, Saturday 7:30pm</p>
+							<p class="eventDeets">November 19, Thursday 7:30pm</p>
+							<p class="eventDeets">Sign up at <a class="whiteText" href="https://tinyurl.com/registerqhgamenight">https://tinyurl.com/registerqhgamenight</a>!</p>
+						</li>
+						
+						<li>
+							<h2 class="eventTitle whiteText">Weekly Study Groups</h2>
+							<p class="eventDeets">Join with Discord: <a class="whiteText" href="https://discord.gg/4A7gbY">https://discord.gg/4A7gbY</a></p>
+						</li>
+						
+						<li>
+							<h2 class="eventTitle whiteText">Make Your Own Instagram Filter</h2>
+							<p class="eventDeets">September 10, Thursday 7:00pm</p>
+						</li>
+						
+						<li>
+							<h2 class="eventTitle whiteText">Make Your Own Website</h2>
+							<p class="eventDeets">October 7, Wednesday 7:00pm</p>
+						</li>
+						
+						<li>
+							<h2 class="eventTitle whiteText">Make a Spooky Ga(y)me</h2>
+							<p class="eventDeets">October 28, Wednesday 7:00pm</p>
+						</li>
+						
+						<li>
+							<h2 class="eventTitle whiteText">Tech Career Fair</h2>
+							<p class="eventDeets">TBD</p>
+						</li>
+						
+						<li>
+							<h2 class="eventTitle whiteText"><span class="logoTitle"><span class="whiteText">queer</span><span class="darkGreyText">_hack 2020</span></span>: Our Inaugural Hackathon</h2>
+							<p class="eventDeets">Saturday December 5 - Sunday December 6, 2020</p>
+							<p class="eventDeets">Registration will open on Monday October 26th.</p>
+							
+							<p>Whether you’ve never coded before or you’re a senior Computer Science major who has already scored a software engineering job offer, all LGBTQ+ students are welcome at queer_hack 2020. One of the first hackathons by and for LGBTQ+ students in the nation, queer_hack 2020 will feature workshops, speakers, social events, and a coding competition. Join us to try something new, connect with LGBTQ+ peers and professionals, and sharpen your programming skills. Keep a look out for the launch of our official landing page soon.</p>
+						</li>
+					</ul>
 				</div>
 			</div>
 			
@@ -121,69 +181,55 @@
 				<div class="container">
 					<h1>FAQ</h1>
 					
+					<br>
+					
 					<div class="faqList rowed">
 						<div class="faqColumn columnated">
 							<label class="faQuestion">
 								<div class="faqHeader pinkSpace">
-									Can I be involved if I'm not a computer science major or if I've never coded before?
+									Who is <span class="logoTitle"><span class="whiteText">queer</span><span class="darkGreyText">_hack</span></span> for?
 								</div>
 								
-								<input type="checkbox">
+								<input type="checkbox" autocomplete="off">
 								
 								<div class="faqArrow">
 									<i class="fas fa-angle-down"></i>
 								</div>
 								
 								<div class="faqContent whiteSpace">
-									<p>YES! Yes you can! The only requirement is respect of other's identities. Hackathons are great experiences for people from all backgrounds. Even if you're an English major, learning some programming skills can be fun and provide a resume booster. (You might even discover that you love coding!)</p>
+									<p>We invite all LGBTQ+ students who have any interest in tech to join the queer_hack community, regardless of your major or school. This is an intentionally broad category. Some of our events cater to Computer Science majors (such as the weekly study groups). However, many events can be enjoyed even if you’ve never coded before (such as coding workshops or the weekly social night). Though we are based out of UNC, all of our events are virtual for the foreseeable future, and so we welcome non-UNC students as well.</p>
 								</div>
 							</label>
 							
 							<label class="faQuestion">
 								<div class="faqHeader pinkSpace">
-									&lt;Question Here&gt;
+									I’m not out to everyone. Can I join <span class="logoTitle"><span class="whiteText">queer</span><span class="darkGreyText">_hack</span></span>?
 								</div>
 								
-								<input type="checkbox">
+								<input type="checkbox" autocomplete="off">
 								
 								<div class="faqArrow">
 									<i class="fas fa-angle-down"></i>
 								</div>
 								
 								<div class="faqContent whiteSpace">
-									<p>&lt;Answer Here&gt;</p>
+									<p>Yes. We won’t share your name, email, or other information with anyone without your permission. If you have concerns about being outed at our events, please email us at <a href="mailto:uncqueerhack@gmail.com">uncqueerhack@gmail.com</a> and we’ll be happy to talk to you.</p>
 								</div>
 							</label>
 							
 							<label class="faQuestion">
 								<div class="faqHeader pinkSpace">
-									&lt;Question Here&gt;
+									I’m a professional in the tech industry. How can my company sponsor/attend/host an event with <span class="logoTitle"><span class="whiteText">queer</span><span class="darkGreyText">_hack</span></span>?
 								</div>
 								
-								<input type="checkbox">
+								<input type="checkbox" autocomplete="off">
 								
 								<div class="faqArrow">
 									<i class="fas fa-angle-down"></i>
 								</div>
 								
 								<div class="faqContent whiteSpace">
-									<p>&lt;Answer Here&gt;</p>
-								</div>
-							</label>
-							
-							<label class="faQuestion">
-								<div class="faqHeader pinkSpace">
-									&lt;Question Here&gt;
-								</div>
-								
-								<input type="checkbox">
-								
-								<div class="faqArrow">
-									<i class="fas fa-angle-down"></i>
-								</div>
-								
-								<div class="faqContent whiteSpace">
-									<p>&lt;Answer Here&gt;</p>
+									<p>We’d love to work with you. Please email <a href="mailto:uncqueerhack@gmail.com">uncqueerhack@gmail.com</a> and we’ll respond to you as quickly as possible.</p>
 								</div>
 							</label>
 						</div>
@@ -191,65 +237,65 @@
 						<div class="faqColumn columnated">
 							<label class="faQuestion">
 								<div class="faqHeader pinkSpace">
-									I'm not a student at UNC, can I get involved?
+									How do I join <span class="logoTitle"><span class="whiteText">queer</span><span class="darkGreyText">_hack</span></span>?
 								</div>
 								
-								<input type="checkbox">
+								<input type="checkbox" autocomplete="off">
 								
 								<div class="faqArrow">
 									<i class="fas fa-angle-down"></i>
 								</div>
 								
 								<div class="faqContent whiteSpace">
-									<p>Probably! Our planning team is only for UNC students right now, but you can participate in the hackathon if you're not a UNC student. Feel free to contact us to ask about travel/housing accommodations as we work to plan logistics. If you're an alumn or representative of an outside business, please view our Get Involved section.</p>
+									<p>You can join right <a href="#join">here</a> by signing up for our newsletter and/or indicating interest in our weekly study groups. You can also follow us on social media. Events will be held virtually for Fall 2020 and information on how to attend each one will be in our newsletter and on our social media.</p>
 								</div>
 							</label>
 							
 							<label class="faQuestion">
 								<div class="faqHeader pinkSpace">
-									&lt;Question Here&gt;
+									Is there a way for me to join the executive board for <span class="logoTitle"><span class="whiteText">queer</span><span class="darkGreyText">_hack</span></span>?
 								</div>
 								
-								<input type="checkbox">
+								<input type="checkbox" autocomplete="off">
 								
 								<div class="faqArrow">
 									<i class="fas fa-angle-down"></i>
 								</div>
 								
 								<div class="faqContent whiteSpace">
-									<p>&lt;Answer Here&gt;</p>
+									<p>We currently have an <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6Di26s-4NcAmQOcvkq12pU1f4Y9Ng_BPwO20IRZvE0PJ1pg/viewform?usp=sf_link">Interest Form for the Director of Equity, Inclusion, and Accessibility</a>. There will be an application window for all positions in Spring 2021.</p>
 								</div>
 							</label>
 							
 							<label class="faQuestion">
 								<div class="faqHeader pinkSpace">
-									&lt;Question Here&gt;
+									Who leads <span class="logoTitle"><span class="whiteText">queer</span><span class="darkGreyText">_hack</span></span>?
 								</div>
 								
-								<input type="checkbox">
+								<input type="checkbox" autocomplete="off">
 								
 								<div class="faqArrow">
 									<i class="fas fa-angle-down"></i>
 								</div>
 								
 								<div class="faqContent whiteSpace">
-									<p>&lt;Answer Here&gt;</p>
+									<p>Our executive board is a team of LGBTQ+ students in tech who attend UNC Chapel Hill. Follow our social media and stay tuned for a ‘Meet the Board’ series.</p>
 								</div>
 							</label>
 							
 							<label class="faQuestion">
 								<div class="faqHeader pinkSpace">
-									&lt;Question Here&gt;
+									Why is your logo a rubber duck?
 								</div>
 								
-								<input type="checkbox">
+								<input type="checkbox" autocomplete="off">
 								
 								<div class="faqArrow">
 									<i class="fas fa-angle-down"></i>
 								</div>
 								
 								<div class="faqContent whiteSpace">
-									<p>&lt;Answer Here&gt;</p>
+									<p>It’s a humorous little joke, for <span class="logoTitle"><span class="pinkText">queer</span><span class="darkGreyText">_hack</span></span> can be abbreviated to <span class="logoTitle"><span class="pinkText">qu</span><span class="darkGreyText">_ack</span></span>. The duck is additionally a nod to the age-old tradition of rubber duck debugging. Also, ducks are cool.</p>
 								</div>
 							</label>
 						</div>
@@ -262,30 +308,60 @@
 			</div>
 			
 			<div class="section pinkSpace involvementSpace">
-				<div id="get-involved" class="jumpable"></div>
+				<div id="join" class="jumpable"></div>
 				
 				<div class="container">
-					<h1>Get Involved</h1>
-					<h2>Whether you're interested in planning, participating in, or supporting one of the nation's first hackathons for queer students, we're glad you're here!</h2>
+					<h1>Join the Community</h1>
+					<p>Whether you’re already a Computer Science major or just interested in exploring coding, we’d love for you to join the community.</p>
 					
 					<br>
 					
-					<p>Want to participate? Get notified of when registration opens for our 2020 hackathon!</p>
+					<!-- Begin Mailchimp Signup Form -->
+						<div id="mc_embed_signup">
+						<form action="https://gmail.us4.list-manage.com/subscribe/post?u=11edbbc2e7dca7a966d3cd461&amp;id=94566365f7" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+							<div id="mc_embed_signup_scroll">
+							
+						<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+						<div class="mc-field-group">
+							<label for="mce-FNAME">First Name  <span class="asterisk">*</span>
+						</label>
+							<input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+						</div>
+						<div class="mc-field-group">
+							<label for="mce-LNAME">Last Name  <span class="asterisk">*</span>
+						</label>
+							<input type="text" value="" name="LNAME" class="required" id="mce-LNAME">
+						</div>
+						<div class="mc-field-group">
+							<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+						</label>
+							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+						</div>
+						<div class="mc-field-group input-group">
+							<strong>Email Interests </strong>
+							<ul><li><input type="checkbox" value="1" name="group[70134][1]" id="mce-group[70134]-70134-0"><label for="mce-group[70134]-70134-0">Biweekly Newsletter</label></li>
+						<li><input type="checkbox" value="2" name="group[70134][2]" id="mce-group[70134]-70134-1"><label for="mce-group[70134]-70134-1">Weekly Peer Study Groups</label></li>
+						<li><input type="checkbox" value="4" name="group[70134][4]" id="mce-group[70134]-70134-2"><label for="mce-group[70134]-70134-2">December 2020 Hackathon</label></li>
+						</ul>
+						</div>
+							<div id="mce-responses" class="clear">
+								<div class="response" id="mce-error-response" style="display:none"></div>
+								<div class="response" id="mce-success-response" style="display:none"></div>
+							</div>	<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+							<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_11edbbc2e7dca7a966d3cd461_94566365f7" tabindex="-1" value=""></div>
+							<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+							</div>
+						</form>
+						</div>
+					<!--End mc_embed_signup-->
 					
-					<a href="https://queerhack.typeform.com/to/oAtdEQ" class="actionButton columnated">
-						<div><h2>Pre-register here</h2></div>
-					</a>
+					<br>
+					<br>
 					
-					<!--<p>No experience required, coding or otherwise, so don't be shy! Even if you're not a computer science major, we need people with passions for a wide variety of skills: graphic design, finance, marketing, and more. Queer students and allies are both welcome. We actively encourage people of color and disabled individuals to join!</p>
+					<p>Are you an alumn, faculty/staff member, or industry professional who wants to get involved with <span class="logoTitle"><span class="whiteText">queer</span><span class="darkGreyText">_hack</span></span>? We'd love to talk to you. Please send us an email at:</p>
 					
-					<a href="https://queerhack.typeform.com/to/ihWfpl" class="actionButton columnated">
-						<div><h2>Join the team!</h2></div>
-					</a>-->
-					
-					<p>Are you an alumn, faculty/staff member, or community partner who wants to connect with organizers? We'd love to talk to you about being a sponsor, mentor, speaker, or volunteer!</p>
-					
-					<a href="mailto:director.queerhack@gmail.com" class="actionButton columnated">
-						<div><h2>Offer support!</h2></div>
+					<a href="mailto:uncqueerhack@gmail.com" class="actionButton columnated">
+						<div><h2>uncqueerhack@gmail.com</h2></div>
 					</a>
 				</div>
 			</div>
@@ -293,12 +369,14 @@
 			<div class="section darkGreySpace contactSpace">
 				<div id="contact" class="jumpable"></div>
 				
+				<div id="contactLabel">Connect with us:</div>
+				
 				<div class="container">
 					<div id="contactList">
 						<a href="https://www.instagram.com/uncqueer_hack/"><i class="fab fa-instagram"></i></a>
 						<a href="https://www.facebook.com/groups/281137669205554/"><i class="fab fa-facebook-f"></i></a>
 						<a href="https://twitter.com/uncqueerhack"><i class="fab fa-twitter"></i></a>
-						<a href="mailto:director.queerhack@gmail.com"><i class="far fa-envelope"></i></a>
+						<a href="mailto:uncqueerhack@gmail.com"><i class="far fa-envelope"></i></a>
 					</div>
 				</div>
 			</div>
