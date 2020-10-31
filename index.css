@@ -325,11 +325,21 @@ a {
   width: 100%;
   height: 2em;
 }
-#main .spacer .slanted {
+#main .spacer .slantedDown {
+  position: relative;
+  top: 0;
   width: 100%;
   height: 100%;
-  clip-path: polygon(0 0, 100% 100%, 0 100%);
-  -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%);
+  clip-path: polygon(-5% -5%, 105% 105%, 105% -5%);
+  -webkit-clip-path: polygon(-5% -5%, 105% 105%, 105% -5%);
+}
+#main .spacer .slantedUp {
+  position: relative;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(-5% -5%, 105% 105%, -5% 105%);
+  -webkit-clip-path: polygon(-5% -5%, 105% 105%, -5% 105%);
 }
 
 /* Event Section -------------------------------------------------------------------------------------*/
