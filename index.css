@@ -89,22 +89,53 @@ a {
   color: #f0f0f0;
 }
 
+/* Link Defaults */
+.darkGreySpace a, .darkGreySpace a:link, .darkGreySpace a:hover, .darkGreySpace a:active, .darkGreySpace a:visited, .whiteSpace a, .whiteSpace a:link, .whiteSpace a:hover, .whiteSpace a:active, .whiteSpace a:visited {
+  color: #f768d7;
+}
+
+.pinkSpace a, .pinkSpace a:link, .pinkSpace a:hover, .pinkSpace a:active, .pinkSpace a:visited {
+  color: #f0f0f0;
+}
+
 /* Logo --------------------------------------------------------------------------------------------*/
 .logoDuckie {
   background-image: url("lined_duck.png");
 }
 
 /* Vanilla Title */
-.logoTitle {
+.logoText {
   font-family: "Saira Condensed", sans-serif;
   margin: 0;
   padding: 0;
-  text-align: center;
+  line-height: 0.8;
 }
-
-.logoTitle span {
+.logoText span {
   margin: 0;
   padding: 0;
+}
+.logoText span:first-child {
+  color: #f768d7;
+}
+
+.darkGreySpace .logoText span:first-child, .container .darkGreySpace .logoText span:first-child, .whiteSpace .logoText span:first-child, .container .whiteSpace .logoText span:first-child {
+  color: #f768d7;
+}
+
+.darkGreySpace span:first-child::selection, .container .darkGreySpace span:first-child::selection {
+  color: #303030;
+}
+
+.whiteSpace span:first-child::selection, .container .whiteSpace span:first-child::selection {
+  color: #f0f0f0;
+}
+
+.pinkSpace .logoText span:first-child, .container .pinkSpace .logoText span:first-child {
+  color: #f0f0f0;
+}
+
+.pinkSpace span:first-child::selection, .container .pinkSpace span:first-child::selection {
+  color: #f0f0f0;
 }
 
 /* Scrolling Header ----------------------------------------------------------------------------------*/
@@ -161,10 +192,10 @@ a {
   transition-duration: 0.25s;
   z-index: 3;
 }
-#navMenu #navHome span {
+#navMenu .logoText {
   font-size: 1.1em;
 }
-#navMenu #navHome:hover span.pinkText, #navMenu #navHome:active span.pinkText {
+#navMenu #navHome:hover .logoText span:first-child, #navMenu #navHome:active .logoText span:first-child, #navMenu .logoText span:first-child::selection {
   color: #f0f0f0;
 }
 #navMenu #orgLink .pseudoImg {
@@ -237,9 +268,8 @@ a {
   align-items: center;
   width: 100%;
   height: 100%;
-  font-size: 4vh;
   padding: 0 1em;
-  background-image: url("view_l.png");
+  background-image: url("view_m.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 70%;
@@ -256,17 +286,30 @@ a {
   max-width: 40vh;
   max-height: 40vh;
 }
-#graphic .logoTitle {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
+#graphic #bigLogoText {
   max-width: 100%;
-  font-size: 225%;
+  font-size: 400%;
+  text-align: center;
 }
-#graphic .logoTitle span {
-  max-width: 50%;
+#graphic #bigLogoText span:first-child {
+  color: #303030;
+}
+#graphic #bigLogoText span:first-child::selection {
+  color: #f0f0f0;
+}
+#graphic #bigLogoText span:last-child {
+  color: #f0f0f0;
+}
+#graphic #bigLogoText span:last-child::selection {
+  color: #303030;
+}
+#graphic .logoSubTitle {
+  margin: 0.5rem 0;
+  padding: 0.5rem 3rem;
+  text-align: center;
+  font-size: 120%;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+  border-radius: 5px;
 }
 #graphic .bigButton:link, #graphic .bigButton:visited, #graphic .bigButton:hover, #graphic .bigButton:active {
   color: #303030;
@@ -297,18 +340,19 @@ a {
   overflow: hidden;
 }
 #main h1 {
-  margin: 0;
-  padding: 0.2em 0 0.05em 0;
+  margin: 0.2em 0 0.05em 0;
+  padding: 0;
   font-size: 2em;
+  text-align: center;
 }
 #main h2 {
-  margin: 0;
-  padding: 0.75em 0 0.05em 0;
+  margin: 0.75em 0 0.05em 0;
+  padding: 0;
   font-size: 1.25em;
 }
 #main p {
-  padding: 0.2em 0;
-  margin: 0;
+  margin: 0.2em 0;
+  padding: 0;
 }
 #main .section {
   box-sizing: border-box;
@@ -342,6 +386,63 @@ a {
   -webkit-clip-path: polygon(-5% -5%, 105% 105%, -5% 105%);
 }
 
+/* Schedule ----------------------------------------------------------------------------------------*/
+#schedContainer {
+  box-sizing: border-box;
+  padding: 1rem 0.5rem;
+  width: 100%;
+  height: 75vh;
+  background-color: #f768d7;
+  border-radius: 5px;
+}
+#schedContainer #schedCornerHider {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#schedContainer #schedCornerHider #schedArea {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#schedContainer #schedCornerHider #schedArea .schedItems {
+  list-style-position: inside;
+  list-style-type: none;
+  margin: 1rem 0;
+  padding: 0 3rem;
+  width: 100%;
+  border-spacing: 0;
+}
+#schedContainer #schedCornerHider #schedArea .schedItems td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #c9c9c9;
+}
+#schedContainer #schedCornerHider #schedArea .schedItems tr:nth-child(5) td, #schedContainer #schedCornerHider #schedArea .schedItems tr:nth-child(16) td, #schedContainer #schedCornerHider #schedArea .schedItems tr:last-child td {
+  border-bottom: none;
+}
+#schedContainer #schedCornerHider #schedArea .schedItems .schedHeaderContainer {
+  padding: 0.5em 0;
+  border-bottom: none;
+}
+#schedContainer #schedCornerHider #schedArea .schedItems .schedHeaderContainer .schedHeader {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+}
+#schedContainer #schedCornerHider #schedArea .schedItems .schedHeaderContainer .schedHeader .schedHeaderLine {
+  flex-grow: 1;
+  border-top: 3px solid #303030;
+}
+#schedContainer #schedCornerHider #schedArea .schedItems .schedHeaderContainer .schedHeader h2 {
+  margin: 0;
+  padding: 0 1rem;
+}
+
 /* Event Section -------------------------------------------------------------------------------------*/
 #eventList .eventTitle {
   padding-top: 0.25em;
@@ -351,10 +452,6 @@ a {
 }
 
 /* FAQ Section ---------------------------------------------------------------------------------------*/
-#main .faqSpace h1 {
-  text-align: center;
-}
-
 #main .faqList {
   flex-wrap: wrap;
   align-items: flex-start;
@@ -372,7 +469,7 @@ a {
   display: block;
   margin: 0.5em 0;
   width: 100%;
-  border: 0.2rem solid #f768d7;
+  border: 0.2rem solid #f0f0f0;
   border-radius: 5px;
 }
 #main .faQuestion input {
@@ -384,7 +481,8 @@ a {
 #main .faQuestion .faqArrow {
   display: flex;
   justify-content: center;
-  background-color: #f768d7;
+  color: #f768d7;
+  background-color: #f0f0f0;
 }
 #main .faQuestion .faqArrow * {
   transition-property: transform, color;
@@ -405,50 +503,48 @@ a {
   color: #f768d7;
 }
 #main .faQuestion input:checked + .faqArrow * {
-  color: #f0f0f0;
+  color: #303030;
   transform: rotate(180deg);
 }
 #main .faQuestion input:checked + .faqArrow + .faqContent {
-  max-height: 20em;
+  max-height: 50rem;
 }
 
 #main .faQuestion:hover {
   cursor: pointer;
 }
 #main .faQuestion:hover .faqArrow * {
-  color: #f0f0f0;
+  color: #303030;
 }
 
 /* Get Involved Section ------------------------------------------------------------------------------*/
-#graphic .actionButton, #main .involvementSpace .actionButton {
+#graphic .actionButton, .container .actionButton {
   max-width: 60%;
   margin: 1em auto 0.5em auto;
   border-radius: 5px;
   color: #303030;
   background-color: #f0f0f0;
 }
-#graphic .actionButton div, #main .involvementSpace .actionButton div {
+#graphic .actionButton div, .container .actionButton div {
   width: 40vw;
   max-width: 100%;
-  padding: 0.5em 0;
-  font-size: 100%;
+  padding: 0.5rem 0;
+  font-size: 1.15rem;
   text-align: center;
 }
-#graphic .actionButton h2, #main .involvementSpace .actionButton h2 {
-  padding: 0;
-  margin: 0;
-}
-#graphic .actionButton:link, #graphic .actionButton:visited, #main .involvementSpace .actionButton:link, #main .involvementSpace .actionButton:visited {
+#graphic .actionButton:link, #graphic .actionButton:visited, .container .actionButton:link, .container .actionButton:visited {
   color: #303030;
   background-color: #f0f0f0;
 }
-#graphic .actionButton:hover, #graphic .actionButton:active, #main .involvementSpace .actionButton:hover, #main .involvementSpace .actionButton:active {
+#graphic .actionButton:hover, #graphic .actionButton:active, .container .actionButton:hover, .container .actionButton:active {
   color: #f0f0f0;
   background-color: #303030;
 }
-#graphic .smolButton div, #main .involvementSpace .smolButton div {
+#graphic .smolButton div, .container .smolButton div {
   width: 20vw;
   max-width: 90%;
+  padding: 0.75rem;
+  font-size: 1.5rem;
 }
 
 #graphic .actionButton {
@@ -690,6 +786,38 @@ a {
   background-color: #f768d7;
 }
 
+/* Sponsors ------------------------------------------------------------------------------------------*/
+.sponsorList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+  width: 100%;
+}
+.sponsorList li {
+  display: block;
+  width: 30%;
+  min-width: 200px;
+}
+.sponsorList li a {
+  display: block;
+  box-sizing: border-box;
+  padding: 10%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.sponsorList li a img {
+  max-width: 100%;
+}
+.sponsorList li::marker {
+  display: none;
+}
+
 /* Contact List --------------------------------------------------------------------------------------*/
 #main .section.contactSpace, #main .section.contactSpace .container {
   padding: 0;
@@ -726,6 +854,12 @@ a {
 }
 
 /* Responsive Design! ------------------------------------------------------------------------------------*/
+/* Big Screens */
+@media only screen and (min-width: 3000px) {
+  #graphic {
+    background-image: url("view_l.png");
+  }
+}
 /* Small or Tall Screens */
 @media only screen and (max-width: 1000px), only screen and (max-aspect-ratio: 1/1) {
   /* Only display button now */
@@ -774,18 +908,12 @@ a {
   }
 
   /* Graphic Duckie Resize */
-  #graphic {
-    background-image: url("view_m.png");
-  }
   #graphic .logoDuckie {
     max-width: 80vh;
     max-height: 80vh;
   }
-  #graphic .logoTitle {
-    font-size: 14vw;
-  }
   #graphic div {
-    font-size: 6vw;
+    font-size: 2.5rem;
   }
   #graphic .smolButton div {
     width: 50vw;
@@ -819,6 +947,15 @@ a {
     height: 4.2rem;
   }
 }
+/* Medium Screens --------------------------------------------------------------------------------*/
+@media only screen and (max-width: 650px) {
+  #schedContainer #schedCornerHider #schedArea .schedItems {
+    padding: 0 1.5rem;
+  }
+  #schedContainer #schedCornerHider #schedArea .schedItems td:nth-child(3) {
+    display: none;
+  }
+}
 /* Super Tiny Screens ------------------------------------------------------------------------------*/
 @media only screen and (max-width: 500px) {
   #graphic {
@@ -827,6 +964,12 @@ a {
 
   #main .section .container {
     padding: 0.3em 1em;
+  }
+}
+/* Super Super Tiny Screens -------------------------------------------------------------------------*/
+@media only screen and (max-width: 350px) {
+  #schedContainer #schedCornerHider #schedArea .schedItems td:nth-child(4) {
+    display: none;
   }
 }
 

@@ -1,0 +1,1059 @@
+@import url('https://fonts.googleapis.com/css?family=Signika:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Saira+Condensed:700&display=swap');
+
+$_offwhite: #f0f0f0;
+$_offgrey: #c9c9c9;
+$_darkgrey: #303030;
+$_pink: #f768d7;
+$_softred: #ff4a4a;
+
+$_navbarBorder: 0.2rem;
+
+$_navbarHeight: 3.5rem;
+$_c19U_Height: 1.5em;
+$_navbarTotal: $_navbarHeight + $_navbarBorder;
+
+$_navbarTallHeight: 4rem;
+$_navbarTallTotal: $_navbarTallHeight + $_navbarBorder;
+
+$_roundnessRadius: 5px;
+
+/* General -----------------------------------------------------------------------------------------*/
+html {
+	scroll-behavior: smooth;
+	
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	
+	margin: 0;
+	
+	font-family: 'Signika', sans-serif;
+	font-size: 1rem;
+	
+	color: $_offwhite;
+}
+
+a {
+	text-decoration: none;
+}
+
+.rowed {
+	display: flex;
+	
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.columnated {
+	display: flex;
+	
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.pseudoImg{
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center bottom;
+}
+
+/* Color Universals --------------------------------------------------------------------------------*/
+/* Spaces */
+.darkGreySpace {
+	color: $_offwhite;
+	background-color: $_darkgrey;
+}
+
+.pinkSpace {
+	color: $_darkgrey;
+	background-color: $_pink;
+}
+
+.whiteSpace {
+	color: $_darkgrey;
+	background-color: $_offwhite;
+}
+
+/* Texts */
+.darkGreyText {
+	color: $_darkgrey;
+}
+
+.pinkText {	
+	color: $_pink;
+}
+
+.whiteText {
+	color: $_offwhite;
+}
+
+.pinkHighlight {
+	background-color: $_pink;
+}
+
+/* Selections */
+*::selection {
+	color: $_darkgrey;
+	background-color: $_pink;
+}
+
+.pinkSpace *::selection, .pinkSpace::selection, .pinkHighlight::selection {
+	color: $_pink;
+	background-color: $_darkgrey;
+}
+
+.darkGreyText::selection, .pinkText::selection {
+	color: $_offwhite;
+}
+
+/* Link Defaults */
+.darkGreySpace, .whiteSpace {
+	a, a:link, a:hover, a:active, a:visited {
+		color: $_pink;
+	}
+}
+
+.pinkSpace {
+	a, a:link, a:hover, a:active, a:visited {
+		color: $_offwhite;
+	}
+}
+
+/* Logo --------------------------------------------------------------------------------------------*/
+.logo {
+	
+}
+
+.logoDuckie {
+	background-image: url("lined_duck.png");
+}
+
+/* Vanilla Title */
+.logoText {
+	font-family: 'Saira Condensed', sans-serif;
+	
+	margin: 0;
+	padding: 0;
+	
+	line-height: 0.8;
+	
+	span {
+		margin: 0;
+		padding: 0;
+	}
+	
+	span:first-child {
+		color: $_pink;
+	}
+}
+
+.darkGreySpace, .container .darkGreySpace, .whiteSpace, .container .whiteSpace {
+	.logoText {
+		span:first-child {
+			color: $_pink;
+		}
+	}
+}
+
+.darkGreySpace, .container .darkGreySpace {
+	span:first-child::selection {
+		color: $_darkgrey;
+	}
+}
+
+.whiteSpace, .container .whiteSpace {
+	span:first-child::selection {
+		color: $_offwhite;
+	}
+}
+
+.pinkSpace, .container .pinkSpace {
+	.logoText {
+		span:first-child {
+			color: $_offwhite;
+		}
+	}
+}
+
+.pinkSpace, .container .pinkSpace {
+	span:first-child::selection {
+		color: $_offwhite;
+	}
+}
+
+/* Scrolling Header ----------------------------------------------------------------------------------*/
+// Navigation Bar
+#scrollingHeader {
+	position: fixed;
+	
+	top: 0;
+	width: 100%;
+	
+	z-index: 1;
+}
+
+#navBar {
+	display: block;
+	position: relative;
+	
+	height: $_navbarHeight;
+	
+	background-color: $_darkgrey;
+	
+	border-top: $_navbarBorder solid;
+	border-color: $_pink;
+}
+
+#navButton {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	
+	height: 100%;
+	width: $_navbarHeight;
+	
+	color: $_pink;
+	text-decoration: none;
+}
+
+#navAway {
+	position: absolute;
+	visibility: hidden;
+	
+	opacity: 0;
+	
+	width: 100vw;
+	height: 150vh;
+	top: 0;
+	
+	transition-property: visibility, opacity;
+	transition-duration: 0.25s;
+	
+	z-index: 2;
+}
+
+#navMenu {
+	position: absolute;
+	display: flex;
+	
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	
+	width: 100%;
+	height: $_navbarHeight;
+	
+	top: 0;
+	
+	font-size: 1.25rem;
+	
+	transition-property: margin-left, visibility;
+	transition-duration: 0.25s;
+	
+	z-index: 3;
+	
+	.logoText {
+		font-size: 1.1em;
+	}
+	
+	#navHome:hover .logoText span:first-child, #navHome:active .logoText span:first-child, .logoText span:first-child::selection {
+		color: $_offwhite;
+	}
+	
+	#orgLink {
+		
+	}
+	
+	#orgLink .pseudoImg {
+		background-image: url("pixel_quack.png");
+		
+		width: 2.1em;
+		height: 1.5em;
+	}
+	
+	a {
+		display: flex;
+		align-items: center;
+		
+		padding: 0 1.25rem;
+	}
+	
+	a:link, a:visited {
+		color: $_offwhite;
+	}
+	
+	a:hover, a:active, #orgLink:link, #orgLink:visited {
+		color: $_darkgrey;
+		background-color: $_pink;
+	}
+}
+
+// Covid-19 Update dismissable banner
+#covid19Update {
+	position: relative;
+	
+	align-items: stretch;
+	
+	background-color: $_softred;
+	
+	// Default State
+	#c19UState {
+		display: none;
+	}
+	
+	#c19UText {
+		padding: 0.75em;
+	}
+	
+	#c19UDismissal {
+		display: flex;
+		align-items: center;
+		
+		padding: 0 1em;
+	}
+	
+	#c19UDismissal:hover {
+		background-color: #c73a3a;
+	}
+	
+	// Dismissed State
+	#c19UState:checked ~ #c19UText {
+		display: none;
+	}
+	
+	#c19UState:checked ~ #c19UDismissal {
+		display: none;
+	}
+}
+
+#covid19Update::selection, #covid19Update *::selection {
+	color: $_softred;
+	background-color: $_offwhite;
+}
+
+/* Front Page & Graphic -----------------------------------------------------------------------------*/
+#frontPage {
+	width: 100%;
+	height: 100vh;
+}
+
+#navSpace {
+	flex-grow: 0;
+	flex-shrink: 0;
+	
+	width: 100%;
+	height: $_navbarTotal;
+}
+
+#graphic {
+	box-sizing: border-box;
+	
+	flex-grow: 1;
+	flex-shrink: 1;
+	justify-content: start;
+	align-items: center;
+	
+	width: 100%;
+	height: 100%;
+	
+	padding: 0 1em;
+	
+	background-image: url("view_m.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 70%;
+	
+	.spacer {
+		height: 1em;
+	}
+	
+	*{
+		flex-grow: 0;
+	}
+	
+	.logoDuckie {
+		width: 260px;
+		height: 200px;
+		
+		max-width: 40vh;
+		max-height: 40vh;
+	}
+	
+	#bigLogoText {
+		max-width: 100%;
+		
+		font-size: 400%;
+		
+		text-align: center;
+		
+		span:first-child {
+			color: $_darkgrey;
+		}
+		
+		span:first-child::selection {
+			color: $_offwhite;
+		}
+		
+		span:last-child {
+			color: $_offwhite;
+		}
+		
+		span:last-child::selection {
+			color: $_darkgrey;
+		}
+	}
+	
+	.logoSubTitle {
+		margin: 0.5rem 0;
+		padding: 0.5rem 3rem;
+		
+		text-align: center;
+		font-size: 120%;
+		
+		background-image: linear-gradient(45deg,rgba(0,0,0,0.6),rgba(0,0,0,0.3));
+		
+		border-radius: $_roundnessRadius;
+	}
+	
+	.bigButton:link, .bigButton:visited, .bigButton:hover, .bigButton:active {
+		color: $_darkgrey;
+		background-color: $_pink;
+		
+		text-decoration: none;
+	}
+	
+	.bigButton div {
+		width: 40vw;
+		max-width: 500px;
+		
+		padding: 0.5em 0;
+		
+		font-size: 100%;
+		text-align: center;
+	}
+}
+
+/* Jumpable ----------------------------------------------------------------------------------------*/
+#main .section {
+	position: relative;
+}
+
+.jumpable {
+	position: absolute;
+	
+	top: -$_navbarTotal;
+}
+
+/* Content -----------------------------------------------------------------------------------------*/
+#main {
+	width: 100%;
+	
+	overflow: hidden;
+	
+	h1 {
+		margin: 0.2em 0 0.05em 0;
+		padding: 0;
+		
+		font-size: 2em;
+		
+		text-align: center;
+	}
+	
+	h2 {
+		margin: 0.75em 0 0.05em 0;
+		padding: 0;
+		
+		font-size: 1.25em;
+	}
+	
+	p {
+		margin: 0.2em 0 ;
+		padding: 0;
+	}
+	
+	.section {
+		box-sizing: border-box;
+		
+		width: 100%;
+		
+		padding: 1.5em 0;
+		
+		.container {
+			box-sizing: border-box;
+			
+			width: 1000px;
+			
+			margin: 0 auto;
+			padding: 0.4em 1em;
+		}
+	}
+	
+	.spacer {
+		width: 100%;
+		height: 2em;
+		
+		.slantedDown {
+			position: relative;
+			top: 0;
+			
+			width: 100%;
+			height: 100%;
+			
+			clip-path: polygon(-5% -5%, 105% 105%, 105% -5%);
+			-webkit-clip-path: polygon(-5% -5%, 105% 105%, 105% -5%);
+		}
+		
+		.slantedUp {
+			position: relative;
+			top: -100%;
+			
+			width: 100%;
+			height: 100%;
+			
+			clip-path: polygon(-5% -5%, 105% 105%, -5% 105%);
+			-webkit-clip-path: polygon(-5% -5%, 105% 105%, -5% 105%);
+		}
+	}
+}
+
+/* Schedule ----------------------------------------------------------------------------------------*/
+#schedContainer {
+	box-sizing: border-box;
+	
+	padding: 1rem 0.5rem;
+	
+	width: 100%;
+	height: 75vh;
+	
+	background-color: $_pink;
+	
+	border-radius: $_roundnessRadius;
+	
+	#schedCornerHider {
+		width: 100%;
+		height: 100%;
+		
+		border-radius: $_roundnessRadius;
+		
+		overflow: hidden;
+		
+		#schedArea {
+			margin: 0;
+			padding: 0;
+			
+			width: 100%;
+			height: 100%;
+			
+			background-color: $_offwhite;
+			
+			overflow-y: scroll;
+			overflow-x: hidden;
+			
+			.schedItems {
+				list-style-position: inside;
+				list-style-type: none;
+				
+				margin: 1rem 0;
+				padding: 0 3rem;
+				
+				width: 100%;
+				
+				border-spacing: 0;
+				
+				td {
+					padding: 0.75rem;
+					
+					border-bottom: 1px solid $_offgrey;
+				}
+				
+				tr:nth-child(5) td, tr:nth-child(16) td, tr:last-child td {
+					border-bottom: none;
+				}
+				
+				.schedHeaderContainer{
+					padding: 0.5em 0;
+					
+					border-bottom: none;
+					
+					.schedHeader {
+						box-sizing: border-box;
+						
+						width: 100%;
+						
+						text-align: center;
+						
+						.schedHeaderLine {
+							flex-grow: 1;
+							
+							border-top: 3px solid $_darkgrey;
+						}
+						
+						h2 {
+							margin: 0;
+							padding: 0 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Event Section -------------------------------------------------------------------------------------*/
+#eventList {
+	.eventTitle {
+		padding-top: 0.25em;
+	}
+	
+	.eventDeets {
+		text-indent: 1em;
+	}	
+}
+
+/* FAQ Section ---------------------------------------------------------------------------------------*/
+#main .faqList {
+	flex-wrap: wrap;
+	align-items: flex-start;
+	
+	width: 100%;
+	height: 100%;
+}
+
+#main .faqList .faqColumn {
+	width: 40%;
+	
+	margin: 0 0.5em;
+}
+
+#main .faQuestion {
+	box-sizing: border-box;
+	display: block;
+	
+	margin: 0.5em 0;
+	
+	width: 100%;
+	
+	border: $_navbarBorder solid $_offwhite;
+	border-radius: $_roundnessRadius;
+	
+	input {
+		display: none;
+	}
+	
+	.faqHeader {
+		padding: 0.5em;
+	}
+	
+	.faqArrow {
+		display: flex;
+		justify-content: center;
+		
+		color: $_pink;
+		background-color: $_offwhite;
+		
+		* {
+			transition-property: transform, color;
+			transition-duration: 0.25s;
+		}
+	}
+	
+	.faqContent {
+		overflow: hidden;
+		
+		max-height: 0;
+		
+		transition-property: max-height;
+		transition-duration: 0.25s;
+		transition-timing-function: linear;
+		
+		p {
+			display: block;
+			
+			padding: 0.5em;
+		}
+		
+		a, a:link, a:visited, a:hover, a:active {
+			color: $_pink;
+		}
+	}
+	
+	input:checked + .faqArrow * {
+		color: $_darkgrey;
+		transform: rotate(180deg);
+	}
+	
+	input:checked + .faqArrow + .faqContent {
+		max-height: 50rem;
+	}
+}
+
+#main .faQuestion:hover {
+	cursor: pointer;
+	
+	.faqArrow * {
+		color: $_darkgrey;
+	}
+}
+
+/* Get Involved Section ------------------------------------------------------------------------------*/
+#graphic, .container {
+	.actionButton {
+		max-width: 60%;
+		margin: 1em auto 0.5em auto;
+		
+		border-radius: $_roundnessRadius;
+		
+		color: $_darkgrey;
+		background-color: $_offwhite;
+		
+		div {
+			width: 40vw;
+			max-width: 100%;
+			
+			padding: 0.5rem 0;
+			
+			font-size: 1.15rem;
+			text-align: center;
+		}
+	}
+	
+	.actionButton:link, .actionButton:visited {
+		color: $_darkgrey;
+		background-color: $_offwhite;
+	}
+	
+	.actionButton:hover, .actionButton:active {
+		color: $_offwhite;
+		background-color: $_darkgrey;
+	}
+	
+	.smolButton div {
+		width: 20vw;
+		max-width: 90%;
+		
+		padding: 0.75rem;
+		
+		font-size: 1.5rem;
+	}
+}
+
+#graphic .actionButton {
+	margin-top: auto;
+}
+
+// MailChimp default shenanigans, because the rules don't apply if importd via URL (specifity rules, most likely)
+// Source URL: http://cdn-images.mailchimp.com/embedcode/classic-10_7.css
+#main .involvementSpace {
+	#mc_embed_signup {background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	
+	/* MailChimp Form Embed Code - Classic - 12/17/2015 v10.7 */
+	#mc_embed_signup form {display:block; position:relative; text-align:left; padding:10px 0 10px 3%}
+	#mc_embed_signup h2 {font-weight:bold; padding:0; margin:15px 0; font-size:1.4em;}
+	#mc_embed_signup input {border: 1px solid #ABB0B2; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+	#mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
+	#mc_embed_signup input[type=radio]{-webkit-appearance:radio;}
+	#mc_embed_signup input:focus {border-color:#333;}
+	#mc_embed_signup .button {clear:both; background-color: #aaa; border: 0 none; border-radius:4px; transition: all 0.23s ease-in-out 0s; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: normal; height: 32px; line-height: 32px; margin: 0 5px 10px 0; padding: 0 22px; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: auto;}
+	#mc_embed_signup .button:hover {background-color:#777;}
+	#mc_embed_signup .small-meta {font-size: 11px;}
+	#mc_embed_signup .nowrap {white-space:nowrap;}
+	
+	#mc_embed_signup .mc-field-group {clear:left; position:relative; width:96%; padding-bottom:3%; min-height:50px;}
+	#mc_embed_signup .size1of2 {clear:none; float:left; display:inline-block; width:46%; margin-right:4%;}
+	* html #mc_embed_signup .size1of2 {margin-right:2%; /* Fix for IE6 double margins. */}
+	#mc_embed_signup .mc-field-group label {display:block; margin-bottom:3px;}
+	#mc_embed_signup .mc-field-group input {display:block; width:100%; padding:8px 0; text-indent:2%;}
+	#mc_embed_signup .mc-field-group select {display:inline-block; width:99%; padding:5px 0; margin-bottom:2px;}
+	
+	#mc_embed_signup .datefield, #mc_embed_signup .phonefield-us{padding:5px 0;}
+	#mc_embed_signup .datefield input, #mc_embed_signup .phonefield-us input{display:inline; width:60px; margin:0 2px; letter-spacing:1px; text-align:center; padding:5px 0 2px 0;}
+	#mc_embed_signup .phonefield-us .phonearea input, #mc_embed_signup .phonefield-us .phonedetail1 input{width:40px;}
+	#mc_embed_signup .datefield .monthfield input, #mc_embed_signup .datefield .dayfield input{width:30px;}
+	#mc_embed_signup .datefield label, #mc_embed_signup .phonefield-us label{display:none;}
+	
+	#mc_embed_signup .indicates-required {text-align:right; font-size:11px; margin-right:4%;}
+	#mc_embed_signup .asterisk {color:#e85c41; font-size:150%; font-weight:normal; position:relative; top:5px;}     
+	#mc_embed_signup .clear {clear:both;}
+	
+	#mc_embed_signup .mc-field-group.input-group ul {margin:0; padding:5px 0; list-style:none;}
+	#mc_embed_signup .mc-field-group.input-group ul li {display:block; padding:3px 0; margin:0;}
+	#mc_embed_signup .mc-field-group.input-group label {display:inline;}
+	#mc_embed_signup .mc-field-group.input-group input {display:inline; width:auto; border:none;}
+	
+	#mc_embed_signup div#mce-responses {float:left; top:-1.4em; padding:0em .5em 0em .5em; overflow:hidden; width:90%; margin: 0 5%; clear: both;}
+	#mc_embed_signup div.response {margin:1em 0; padding:1em .5em .5em 0; font-weight:bold; float:left; top:-1.5em; z-index:1; width:80%;}
+	#mc_embed_signup #mce-error-response {display:none;}
+	#mc_embed_signup #mce-success-response {color:#529214; display:none;}
+	#mc_embed_signup label.error {display:block; float:none; width:auto; margin-left:1.05em; text-align:left; padding:.5em 0;}
+	
+	#mc-embedded-subscribe {clear:both; width:auto; display:block; margin:1em 0 1em 5%;}
+	#mc_embed_signup #num-subscribers {font-size:1.1em;}
+	#mc_embed_signup #num-subscribers span {padding:.5em; border:1px solid #ccc; margin-right:.5em; font-weight:bold;}
+	
+	#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {display:inline-block; margin:2px 0 1em 0; padding:5px 10px; background-color:rgba(255,255,255,0.85); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; font-size:14px; font-weight:normal; z-index:1; color:#e85c41;}
+	#mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {border:2px solid #e85c41;}
+}
+
+// Custom MailChimp styling
+#main .involvementSpace #mc_embed_signup {
+	color: $_darkgrey;
+	background-color: $_offwhite;
+	
+	border-radius: $_roundnessRadius;
+	-webkit-border-radius: $_roundnessRadius;
+	-moz-border-radius: $_roundnessRadius;
+	
+	::selection {
+		color: $_darkgrey;
+		background-color: $_pink;
+	}
+	
+	input {
+		background-color: $_offwhite;
+	}
+	
+	.button, .button:hover {
+		background-color: $_pink;
+	}
+}
+
+/* Sponsors ------------------------------------------------------------------------------------------*/
+.sponsorList {
+	display: flex;
+	
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	
+	list-style-type: none;
+	
+	padding: 0;
+	margin: 1rem 0;
+	
+	width: 100%;
+	
+	li {
+		display: block;
+		
+		width: 30%;
+		min-width: 200px;
+		
+		a{
+			display: block;
+			box-sizing: border-box;
+			
+			padding: 10%;
+			
+			width: 100%;
+			height: 100%;
+			
+			overflow: hidden;
+			
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+	
+	li::marker {
+		display: none;
+	}
+}
+
+/* Contact List --------------------------------------------------------------------------------------*/
+#main .section.contactSpace, #main .section.contactSpace .container {
+	padding: 0;
+}
+
+#contactLabel {
+	padding: 0.5em 0;
+	text-align: center;
+}
+
+#contactList {
+	display: flex;
+	
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	
+	a {
+		display: flex;
+		
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+		
+		font-size: 200%;
+		
+		width: 2.5em;
+		height: 2.5em;
+	}
+	
+	a:link, a:visited {
+		color: $_offwhite;
+	}
+	
+	a:hover, a:active {
+		color: $_darkgrey;
+		background-color: $_pink;
+	}
+}
+
+/* Responsive Design! ------------------------------------------------------------------------------------*/
+/* Big Screens */
+@media only screen and (min-width: 3000px) {
+	#graphic{
+		background-image: url("view_l.png");
+	}
+}
+
+/* Small or Tall Screens */
+@media only screen and (max-width: 1000px), only screen and (max-aspect-ratio: 1/1) {	
+	/* Only display button now */
+	#navButton {
+		display: flex;
+	}
+	
+	/* Nav Away, for closing Nav Menu */
+	#navBar{
+		#navAway {
+			visibility: hidden;
+			
+			opacity: 0;
+			background-color: rgba(0,0,0,0.5);
+		}
+		
+		/* Modified Vertical Nav Menu */
+		#navMenu {
+			visibility: hidden;
+			
+			justify-content: flex-start;
+			flex-direction: column;
+			
+			margin-left: -70vw;
+			
+			width: 70vw;
+			height: 150vh;
+			
+			background-color: $_offwhite;
+		}
+	}
+	
+	#navBar:target{
+		#navAway {
+			visibility: visible;
+			opacity: 1;
+		}
+		
+		#navMenu {
+			visibility: visible;
+			
+			margin-left: 0;
+		}
+	}
+	
+	/* Link Stylization */
+	#navMenu{
+		a {
+			padding: 0.4em 0.8em;
+		}
+		
+		a:link, a:visited {
+			color: $_darkgrey;
+		}
+		
+		a:hover, a:active {
+			color: $_darkgrey;
+			background-color: $_pink;
+		}
+	}
+	
+	/* Graphic Duckie Resize */
+	#graphic{
+		.logoDuckie {
+			max-width: 80vh;
+			max-height: 80vh;
+		}
+		
+		div {
+			font-size: 2.5rem;
+		}
+		
+		.smolButton div {
+			width: 50vw;
+		}
+	}
+	
+	/* Main Content Width Changes */
+	#main .section .container {
+		padding: 0.3em 2em;
+		
+		width: 100%;
+	}
+	
+	#main .faqList .faqColumn {
+		width: 80%;
+	}
+}
+
+/* Tall Screens */
+@media only screen and (max-aspect-ratio: 1/1) {
+	#navBar {
+		height: $_navbarTallHeight;
+	}
+	
+	.jumpable {
+		top: -$_navbarTallTotal;
+	}
+	
+	#navButton {
+		width: $_navbarTallHeight;
+	}
+	
+	#navSpace {
+		height: $_navbarTallTotal;
+	}
+}
+
+/* Medium Screens --------------------------------------------------------------------------------*/
+@media only screen and (max-width: 650px) {
+	#schedContainer #schedCornerHider #schedArea .schedItems{
+		padding: 0 1.5rem;
+		
+		td:nth-child(3) {
+			display: none;
+		}
+	}
+}
+
+/* Super Tiny Screens ------------------------------------------------------------------------------*/
+@media only screen and (max-width: 500px) {
+	#graphic {
+		background-image: url("view_s.png");
+	}
+	
+	#main .section .container {
+		padding: 0.3em 1em;
+	}
+}
+
+/* Super Super Tiny Screens -------------------------------------------------------------------------*/
+@media only screen and (max-width: 350px) {
+	#schedContainer #schedCornerHider #schedArea .schedItems{
+		td:nth-child(4) {
+			display: none;
+		}
+	}
+}
