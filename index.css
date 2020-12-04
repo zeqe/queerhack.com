@@ -791,31 +791,52 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   list-style-type: none;
   padding: 0;
-  margin: 1rem 0;
-  width: 100%;
+  margin: 0 auto;
+  width: 80%;
 }
 .sponsorList li {
   display: block;
-  width: 30%;
-  min-width: 200px;
+  width: auto;
 }
 .sponsorList li a {
   display: block;
   box-sizing: border-box;
-  padding: 10%;
-  width: 100%;
+  padding: 4vh;
+  width: auto;
   height: 100%;
   overflow: hidden;
 }
 .sponsorList li a img {
-  max-width: 100%;
+  width: auto;
+  height: 100%;
 }
-.sponsorList li::marker {
-  display: none;
+
+.sponsorList#bigSponsorList li.square {
+  height: 36vh;
+}
+
+.sponsorList#bigSponsorList li.flat {
+  height: 24vh;
+}
+
+.sponsorList#medSponsorList li.square {
+  height: 32vh;
+}
+
+.sponsorList#medSponsorList li.flat {
+  height: 22vh;
+}
+
+.sponsorList#smallSponsorList li.square {
+  height: 27vh;
+}
+
+.sponsorList#smallSponsorList li.flat {
+  height: 18vh;
 }
 
 /* Contact List --------------------------------------------------------------------------------------*/
@@ -949,11 +970,47 @@ a {
 }
 /* Medium Screens --------------------------------------------------------------------------------*/
 @media only screen and (max-width: 650px) {
+  /* Schedule Abbreviation */
   #schedContainer #schedCornerHider #schedArea .schedItems {
     padding: 0 1.5rem;
   }
   #schedContainer #schedCornerHider #schedArea .schedItems td:nth-child(3) {
     display: none;
+  }
+}
+/* Medium or Tall Screens --------------------------------------------------------------------------*/
+@media only screen and (max-width: 650px), only screen and (max-aspect-ratio: 1/1) {
+  /* Sponsorship Display Changes */
+  .sponsorList {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .sponsorList li a {
+    padding: 3vh;
+  }
+
+  .sponsorList#bigSponsorList li.square {
+    height: 30vh;
+  }
+
+  .sponsorList#bigSponsorList li.flat {
+    height: 16vh;
+  }
+
+  .sponsorList#medSponsorList li.square {
+    height: 28vh;
+  }
+
+  .sponsorList#medSponsorList li.flat {
+    height: 14vh;
+  }
+
+  .sponsorList#smallSponsorList li.square {
+    height: 26vh;
+  }
+
+  .sponsorList#smallSponsorList li.flat {
+    height: 13vh;
   }
 }
 /* Super Tiny Screens ------------------------------------------------------------------------------*/
