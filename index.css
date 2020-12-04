@@ -816,27 +816,27 @@ a {
 }
 
 .sponsorList#bigSponsorList li.square {
-  height: 36vh;
-}
-
-.sponsorList#bigSponsorList li.flat {
-  height: 24vh;
-}
-
-.sponsorList#medSponsorList li.square {
   height: 32vh;
 }
 
-.sponsorList#medSponsorList li.flat {
-  height: 22vh;
+.sponsorList#bigSponsorList li.flat {
+  height: 20vh;
 }
 
-.sponsorList#smallSponsorList li.square {
+.sponsorList#medSponsorList li.square {
   height: 27vh;
 }
 
+.sponsorList#medSponsorList li.flat {
+  height: 17vh;
+}
+
+.sponsorList#smallSponsorList li.square {
+  height: 22vh;
+}
+
 .sponsorList#smallSponsorList li.flat {
-  height: 18vh;
+  height: 14vh;
 }
 
 /* Contact List --------------------------------------------------------------------------------------*/
