@@ -4,7 +4,7 @@
 $_offwhite: #f0f0f0;
 $_offgrey: #c9c9c9;
 $_darkgrey: #303030;
-$_pink: #f768d7;
+$_lina_blu: #56a0d3;
 $_softred: #ff4a4a;
 
 $_navbarBorder: 0.2rem;
@@ -71,9 +71,9 @@ a {
 	background-color: $_darkgrey;
 }
 
-.pinkSpace {
+.bluSpace {
 	color: $_darkgrey;
-	background-color: $_pink;
+	background-color: $_lina_blu;
 }
 
 .whiteSpace {
@@ -86,41 +86,41 @@ a {
 	color: $_darkgrey;
 }
 
-.pinkText {	
-	color: $_pink;
+.bluText {	
+	color: $_lina_blu;
 }
 
 .whiteText {
 	color: $_offwhite;
 }
 
-.pinkHighlight {
-	background-color: $_pink;
+.bluHighlight {
+	background-color: $_lina_blu;
 }
 
 /* Selections */
 *::selection {
 	color: $_darkgrey;
-	background-color: $_pink;
+	background-color: $_lina_blu;
 }
 
-.pinkSpace *::selection, .pinkSpace::selection, .pinkHighlight::selection {
-	color: $_pink;
+.bluSpace *::selection, .bluSpace::selection, .bluHighlight::selection {
+	color: $_lina_blu;
 	background-color: $_darkgrey;
 }
 
-.darkGreyText::selection, .pinkText::selection {
+.darkGreyText::selection, .bluText::selection {
 	color: $_offwhite;
 }
 
 /* Link Defaults */
-.darkGreySpace, .whiteSpace {
+.darkGreySpace, .whiteSpace, .whiteSpace#eventArea {
 	a, a:link, a:hover, a:active, a:visited {
-		color: $_pink;
+		color: $_lina_blu;
 	}
 }
 
-.pinkSpace {
+.bluSpace {
 	a, a:link, a:hover, a:active, a:visited {
 		color: $_offwhite;
 	}
@@ -150,14 +150,14 @@ a {
 	}
 	
 	span:first-child {
-		color: $_pink;
+		color: $_lina_blu;
 	}
 }
 
 .darkGreySpace, .container .darkGreySpace, .whiteSpace, .container .whiteSpace {
 	.logoText {
 		span:first-child {
-			color: $_pink;
+			color: $_lina_blu;
 		}
 	}
 }
@@ -174,7 +174,7 @@ a {
 	}
 }
 
-.pinkSpace, .container .pinkSpace {
+.bluSpace, .container .bluSpace {
 	.logoText {
 		span:first-child {
 			color: $_offwhite;
@@ -182,7 +182,7 @@ a {
 	}
 }
 
-.pinkSpace, .container .pinkSpace {
+.bluSpace, .container .bluSpace {
 	span:first-child::selection {
 		color: $_offwhite;
 	}
@@ -208,7 +208,7 @@ a {
 	background-color: $_darkgrey;
 	
 	border-top: $_navbarBorder solid;
-	border-color: $_pink;
+	border-color: $_lina_blu;
 }
 
 #navButton {
@@ -219,7 +219,7 @@ a {
 	height: 100%;
 	width: $_navbarHeight;
 	
-	color: $_pink;
+	color: $_lina_blu;
 	text-decoration: none;
 }
 
@@ -260,7 +260,7 @@ a {
 	
 	z-index: 3;
 	
-	.logoText {
+	#navHome span {
 		font-size: 1.1em;
 	}
 	
@@ -292,7 +292,7 @@ a {
 	
 	a:hover, a:active, #portal:link, #portal:visited {
 		color: $_darkgrey;
-		background-color: $_pink;
+		background-color: $_lina_blu;
 	}
 }
 
@@ -364,12 +364,16 @@ a {
 	width: 100%;
 	height: 100%;
 	
+	font-size: 1.5rem;
+	
 	padding: 0 1em;
 	
-	background-image: url("view_m.png");
+	background-image: url("night_m.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: 50% 70%;
+	background-position: 50% 75%;
+	
+	overflow: hidden;
 	
 	.spacer {
 		height: 1em;
@@ -390,12 +394,16 @@ a {
 	#bigLogoText {
 		max-width: 100%;
 		
-		font-size: 400%;
+		margin: 0.2em 0 0 0;
+		padding: 0.1em 3em;
 		
+		background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0));
+		
+		font-size: 300%;
 		text-align: center;
 		
 		span:first-child {
-			color: $_darkgrey;
+			color: $_lina_blu;
 		}
 		
 		span:first-child::selection {
@@ -411,21 +419,13 @@ a {
 		}
 	}
 	
-	.logoSubTitle {
-		margin: 0.5rem 0;
-		padding: 0.5rem 3rem;
-		
-		text-align: center;
-		font-size: 120%;
-		
-		background-image: linear-gradient(45deg,rgba(0,0,0,0.6),rgba(0,0,0,0.3));
-		
-		border-radius: $_roundnessRadius;
+	.logoTitle span {
+		max-width: 50%;
 	}
 	
 	.bigButton:link, .bigButton:visited, .bigButton:hover, .bigButton:active {
 		color: $_darkgrey;
-		background-color: $_pink;
+		background-color: $_lina_blu;
 		
 		text-decoration: none;
 	}
@@ -507,8 +507,8 @@ a {
 			width: 100%;
 			height: 100%;
 			
-			clip-path: polygon(-5% -5%, 105% 105%, 105% -5%);
-			-webkit-clip-path: polygon(-5% -5%, 105% 105%, 105% -5%);
+			clip-path: polygon(-5% 105%, 105% -5%, -5% -5%);
+			-webkit-clip-path: polygon(-5% 105%, 105% -5%, -5% -5%);
 		}
 		
 		.slantedUp {
@@ -518,104 +518,67 @@ a {
 			width: 100%;
 			height: 100%;
 			
-			clip-path: polygon(-5% -5%, 105% 105%, -5% 105%);
-			-webkit-clip-path: polygon(-5% -5%, 105% 105%, -5% 105%);
+			clip-path: polygon(-5% 105%, 105% -5%, 105% 105%);
+			-webkit-clip-path: polygon(-5% 105%, 105% -5%, 105% 105%);
 		}
 	}
 }
 
-/* Schedule ----------------------------------------------------------------------------------------*/
-#schedContainer {
-	box-sizing: border-box;
-	
-	padding: 1rem 0.5rem;
-	
-	width: 100%;
-	height: 75vh;
-	
-	background-color: $_pink;
+/* Events ----------------------------------------------------------------------------------------*/
+#eventArea {
+	margin: 0;
+	padding: 0.1rem 0;
 	
 	border-radius: $_roundnessRadius;
 	
-	#schedCornerHider {
+	.eventItems {
+		box-sizing: border-box;
+		
+		list-style-position: inside;
+		list-style-type: none;
+		
+		margin: 1rem 0;
+		padding: 0 3rem;
+		
 		width: 100%;
-		height: 100%;
 		
-		border-radius: $_roundnessRadius;
+		border-spacing: 0;
 		
-		overflow: hidden;
+		td {
+			padding: 0.75rem;
+			
+			border-bottom: 1px solid $_offgrey;
+		}
 		
-		#schedArea {
-			margin: 0;
-			padding: 0;
+		tr:nth-child(4) td, tr:nth-child(6) td, tr:nth-child(21) td, tr:last-child td {
+			border-bottom: none;
+		}
+		
+		.eventHeaderContainer{
+			padding: 0.5em 0;
 			
-			width: 100%;
-			height: 100%;
+			border-bottom: none;
 			
-			background-color: $_offwhite;
-			
-			overflow-y: scroll;
-			overflow-x: hidden;
-			
-			.schedItems {
-				list-style-position: inside;
-				list-style-type: none;
-				
-				margin: 1rem 0;
-				padding: 0 3rem;
+			.eventHeader {
+				box-sizing: border-box;
 				
 				width: 100%;
 				
-				border-spacing: 0;
+				text-align: center;
 				
-				td {
-					padding: 0.75rem;
+				.eventHeaderLine {
+					flex-grow: 1;
 					
-					border-bottom: 1px solid $_offgrey;
+					border-top: 3px solid $_darkgrey;
 				}
 				
-				tr:nth-child(5) td, tr:nth-child(16) td, tr:last-child td {
-					border-bottom: none;
-				}
-				
-				.schedHeaderContainer{
-					padding: 0.5em 0;
-					
-					border-bottom: none;
-					
-					.schedHeader {
-						box-sizing: border-box;
-						
-						width: 100%;
-						
-						text-align: center;
-						
-						.schedHeaderLine {
-							flex-grow: 1;
-							
-							border-top: 3px solid $_darkgrey;
-						}
-						
-						h2 {
-							margin: 0;
-							padding: 0 1rem;
-						}
-					}
+				h2 {
+					margin: 0;
+					padding: 0 1rem;
 				}
 			}
 		}
 	}
-}
-
-/* Event Section -------------------------------------------------------------------------------------*/
-#eventList {
-	.eventTitle {
-		padding-top: 0.25em;
-	}
-	
-	.eventDeets {
-		text-indent: 1em;
-	}	
 }
 
 /* FAQ Section ---------------------------------------------------------------------------------------*/
@@ -641,7 +604,7 @@ a {
 	
 	width: 100%;
 	
-	border: $_navbarBorder solid $_offwhite;
+	border: $_navbarBorder solid $_lina_blu;
 	border-radius: $_roundnessRadius;
 	
 	input {
@@ -656,8 +619,7 @@ a {
 		display: flex;
 		justify-content: center;
 		
-		color: $_pink;
-		background-color: $_offwhite;
+		background-color: $_lina_blu;
 		
 		* {
 			transition-property: transform, color;
@@ -681,17 +643,17 @@ a {
 		}
 		
 		a, a:link, a:visited, a:hover, a:active {
-			color: $_pink;
+			color: $_lina_blu;
 		}
 	}
 	
 	input:checked + .faqArrow * {
-		color: $_darkgrey;
+		color: $_offwhite;
 		transform: rotate(180deg);
 	}
 	
 	input:checked + .faqArrow + .faqContent {
-		max-height: 50rem;
+		max-height: 20em;
 	}
 }
 
@@ -699,7 +661,7 @@ a {
 	cursor: pointer;
 	
 	.faqArrow * {
-		color: $_darkgrey;
+		color: $_offwhite;
 	}
 }
 
@@ -813,7 +775,7 @@ a {
 	
 	::selection {
 		color: $_darkgrey;
-		background-color: $_pink;
+		background-color: $_lina_blu;
 	}
 	
 	input {
@@ -821,72 +783,8 @@ a {
 	}
 	
 	.button, .button:hover {
-		background-color: $_pink;
+		background-color: $_lina_blu;
 	}
-}
-
-/* Sponsors ------------------------------------------------------------------------------------------*/
-.sponsorList {
-	display: flex;
-	
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	
-	list-style-type: none;
-	
-	padding: 0;
-	margin: 0 auto;
-	
-	width: 80%;
-	
-	li {
-		display: block;
-		
-		width: auto;
-		
-		a{
-			display: block;
-			box-sizing: border-box;
-			
-			padding: 4vh;
-			
-			width: auto;
-			height: 100%;
-			
-			overflow: hidden;
-			
-			img {
-				width: auto;
-				height: 100%;
-			}
-		}
-	}
-}
-
-.sponsorList#bigSponsorList li.square {
-	height: 32vh;
-}
-
-.sponsorList#bigSponsorList li.flat {
-	height: 20vh;
-}
-
-.sponsorList#medSponsorList li.square {
-	height: 27vh;
-}
-
-.sponsorList#medSponsorList li.flat {
-	height: 17vh;
-}
-
-.sponsorList#smallSponsorList li.square {
-	height: 22vh;
-}
-
-.sponsorList#smallSponsorList li.flat {
-	height: 14vh;
 }
 
 /* Contact List --------------------------------------------------------------------------------------*/
@@ -927,7 +825,7 @@ a {
 	
 	a:hover, a:active {
 		color: $_darkgrey;
-		background-color: $_pink;
+		background-color: $_lina_blu;
 	}
 }
 
@@ -935,7 +833,7 @@ a {
 /* Big Screens */
 @media only screen and (min-width: 3000px) {
 	#graphic{
-		background-image: url("view_l.png");
+		background-image: url("night_m.png");
 	}
 }
 
@@ -996,7 +894,7 @@ a {
 		
 		a:hover, a:active {
 			color: $_darkgrey;
-			background-color: $_pink;
+			background-color: $_lina_blu;
 		}
 	}
 	
@@ -1050,68 +948,18 @@ a {
 /* Medium Screens --------------------------------------------------------------------------------*/
 @media only screen and (max-width: 650px) {
 	/* Schedule Abbreviation */
-	#schedContainer #schedCornerHider #schedArea .schedItems{
+	#eventArea .eventItems{
 		padding: 0 1.5rem;
-		
-		td:nth-child(3) {
-			display: none;
-		}
-	}
-}
-
-/* Medium or Tall Screens --------------------------------------------------------------------------*/
-@media only screen and (max-width: 650px), only screen and (max-aspect-ratio: 1/1) {
-	/* Sponsorship Display Changes */
-	.sponsorList {
-		flex-direction: column;
-		flex-wrap: nowrap;
-		
-		li a {
-			padding: 3vh;
-		}
-	}
-	
-	.sponsorList#bigSponsorList li.square {
-		height: 30vh;
-	}
-	
-	.sponsorList#bigSponsorList li.flat {
-		height: 16vh;
-	}
-	
-	.sponsorList#medSponsorList li.square {
-		height: 28vh;
-	}
-	
-	.sponsorList#medSponsorList li.flat {
-		height: 14vh;
-	}
-	
-	.sponsorList#smallSponsorList li.square {
-		height: 26vh;
-	}
-	
-	.sponsorList#smallSponsorList li.flat {
-		height: 13vh;
 	}
 }
 
 /* Super Tiny Screens ------------------------------------------------------------------------------*/
 @media only screen and (max-width: 500px) {
 	#graphic {
-		background-image: url("view_s.png");
+		background-image: url("night_s.png");
 	}
 	
 	#main .section .container {
 		padding: 0.3em 1em;
-	}
-}
-
-/* Super Super Tiny Screens -------------------------------------------------------------------------*/
-@media only screen and (max-width: 350px) {
-	#schedContainer #schedCornerHider #schedArea .schedItems{
-		td:nth-child(4) {
-			display: none;
-		}
 	}
 }

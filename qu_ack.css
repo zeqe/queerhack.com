@@ -47,9 +47,9 @@ a {
   background-color: #303030;
 }
 
-.pinkSpace {
+.bluSpace {
   color: #303030;
-  background-color: #f768d7;
+  background-color: #56a0d3;
 }
 
 .whiteSpace {
@@ -62,39 +62,39 @@ a {
   color: #303030;
 }
 
-.pinkText {
-  color: #f768d7;
+.bluText {
+  color: #56a0d3;
 }
 
 .whiteText {
   color: #f0f0f0;
 }
 
-.pinkHighlight {
-  background-color: #f768d7;
+.bluHighlight {
+  background-color: #56a0d3;
 }
 
 /* Selections */
 *::selection {
   color: #303030;
-  background-color: #f768d7;
+  background-color: #56a0d3;
 }
 
-.pinkSpace *::selection, .pinkSpace::selection, .pinkHighlight::selection {
-  color: #f768d7;
+.bluSpace *::selection, .bluSpace::selection, .bluHighlight::selection {
+  color: #56a0d3;
   background-color: #303030;
 }
 
-.darkGreyText::selection, .pinkText::selection {
+.darkGreyText::selection, .bluText::selection {
   color: #f0f0f0;
 }
 
 /* Link Defaults */
-.darkGreySpace a, .darkGreySpace a:link, .darkGreySpace a:hover, .darkGreySpace a:active, .darkGreySpace a:visited, .whiteSpace a, .whiteSpace a:link, .whiteSpace a:hover, .whiteSpace a:active, .whiteSpace a:visited {
-  color: #f768d7;
+.darkGreySpace a, .darkGreySpace a:link, .darkGreySpace a:hover, .darkGreySpace a:active, .darkGreySpace a:visited, .whiteSpace a, .whiteSpace a:link, .whiteSpace a:hover, .whiteSpace a:active, .whiteSpace a:visited, .whiteSpace#eventArea a, .whiteSpace#eventArea a:link, .whiteSpace#eventArea a:hover, .whiteSpace#eventArea a:active, .whiteSpace#eventArea a:visited {
+  color: #56a0d3;
 }
 
-.pinkSpace a, .pinkSpace a:link, .pinkSpace a:hover, .pinkSpace a:active, .pinkSpace a:visited {
+.bluSpace a, .bluSpace a:link, .bluSpace a:hover, .bluSpace a:active, .bluSpace a:visited {
   color: #f0f0f0;
 }
 
@@ -115,11 +115,11 @@ a {
   padding: 0;
 }
 .logoText span:first-child {
-  color: #f768d7;
+  color: #56a0d3;
 }
 
 .darkGreySpace .logoText span:first-child, .container .darkGreySpace .logoText span:first-child, .whiteSpace .logoText span:first-child, .container .whiteSpace .logoText span:first-child {
-  color: #f768d7;
+  color: #56a0d3;
 }
 
 .darkGreySpace span:first-child::selection, .container .darkGreySpace span:first-child::selection {
@@ -130,11 +130,11 @@ a {
   color: #f0f0f0;
 }
 
-.pinkSpace .logoText span:first-child, .container .pinkSpace .logoText span:first-child {
+.bluSpace .logoText span:first-child, .container .bluSpace .logoText span:first-child {
   color: #f0f0f0;
 }
 
-.pinkSpace span:first-child::selection, .container .pinkSpace span:first-child::selection {
+.bluSpace span:first-child::selection, .container .bluSpace span:first-child::selection {
   color: #f0f0f0;
 }
 
@@ -152,7 +152,7 @@ a {
   height: 3.5rem;
   background-color: #303030;
   border-top: 0.2rem solid;
-  border-color: #f768d7;
+  border-color: #56a0d3;
 }
 
 #navButton {
@@ -161,7 +161,7 @@ a {
   justify-content: center;
   height: 100%;
   width: 3.5rem;
-  color: #f768d7;
+  color: #56a0d3;
   text-decoration: none;
 }
 
@@ -192,7 +192,7 @@ a {
   transition-duration: 0.25s;
   z-index: 3;
 }
-#navMenu .logoText {
+#navMenu #navHome span {
   font-size: 1.1em;
 }
 #navMenu #navHome:hover .logoText span:first-child, #navMenu #navHome:active .logoText span:first-child, #navMenu .logoText span:first-child::selection {
@@ -213,7 +213,7 @@ a {
 }
 #navMenu a:hover, #navMenu a:active, #navMenu #portal:link, #navMenu #portal:visited {
   color: #303030;
-  background-color: #f768d7;
+  background-color: #56a0d3;
 }
 
 #covid19Update {
@@ -268,11 +268,13 @@ a {
   align-items: center;
   width: 100%;
   height: 100%;
+  font-size: 1.5rem;
   padding: 0 1em;
-  background-image: url("view_m.png");
+  background-image: url("night_m.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 70%;
+  background-position: 50% 75%;
+  overflow: hidden;
 }
 #graphic .spacer {
   height: 1em;
@@ -288,11 +290,14 @@ a {
 }
 #graphic #bigLogoText {
   max-width: 100%;
-  font-size: 400%;
+  margin: 0.2em 0 0 0;
+  padding: 0.1em 3em;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  font-size: 300%;
   text-align: center;
 }
 #graphic #bigLogoText span:first-child {
-  color: #303030;
+  color: #56a0d3;
 }
 #graphic #bigLogoText span:first-child::selection {
   color: #f0f0f0;
@@ -303,17 +308,12 @@ a {
 #graphic #bigLogoText span:last-child::selection {
   color: #303030;
 }
-#graphic .logoSubTitle {
-  margin: 0.5rem 0;
-  padding: 0.5rem 3rem;
-  text-align: center;
-  font-size: 120%;
-  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
-  border-radius: 5px;
+#graphic .logoTitle span {
+  max-width: 50%;
 }
 #graphic .bigButton:link, #graphic .bigButton:visited, #graphic .bigButton:hover, #graphic .bigButton:active {
   color: #303030;
-  background-color: #f768d7;
+  background-color: #56a0d3;
   text-decoration: none;
 }
 #graphic .bigButton div {
@@ -374,43 +374,26 @@ a {
   top: 0;
   width: 100%;
   height: 100%;
-  clip-path: polygon(-5% -5%, 105% 105%, 105% -5%);
-  -webkit-clip-path: polygon(-5% -5%, 105% 105%, 105% -5%);
+  clip-path: polygon(-5% 105%, 105% -5%, -5% -5%);
+  -webkit-clip-path: polygon(-5% 105%, 105% -5%, -5% -5%);
 }
 #main .spacer .slantedUp {
   position: relative;
   top: -100%;
   width: 100%;
   height: 100%;
-  clip-path: polygon(-5% -5%, 105% 105%, -5% 105%);
-  -webkit-clip-path: polygon(-5% -5%, 105% 105%, -5% 105%);
+  clip-path: polygon(-5% 105%, 105% -5%, 105% 105%);
+  -webkit-clip-path: polygon(-5% 105%, 105% -5%, 105% 105%);
 }
 
-/* Schedule ----------------------------------------------------------------------------------------*/
-#schedContainer {
-  box-sizing: border-box;
-  padding: 1rem 0.5rem;
-  width: 100%;
-  height: 75vh;
-  background-color: #f768d7;
-  border-radius: 5px;
-}
-#schedContainer #schedCornerHider {
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  overflow: hidden;
-}
-#schedContainer #schedCornerHider #schedArea {
+/* Events ----------------------------------------------------------------------------------------*/
+#eventArea {
   margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f0f0f0;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  padding: 0.1rem 0;
+  border-radius: 5px;
 }
-#schedContainer #schedCornerHider #schedArea .schedItems {
+#eventArea .eventItems {
+  box-sizing: border-box;
   list-style-position: inside;
   list-style-type: none;
   margin: 1rem 0;
@@ -418,37 +401,29 @@ a {
   width: 100%;
   border-spacing: 0;
 }
-#schedContainer #schedCornerHider #schedArea .schedItems td {
+#eventArea .eventItems td {
   padding: 0.75rem;
   border-bottom: 1px solid #c9c9c9;
 }
-#schedContainer #schedCornerHider #schedArea .schedItems tr:nth-child(5) td, #schedContainer #schedCornerHider #schedArea .schedItems tr:nth-child(16) td, #schedContainer #schedCornerHider #schedArea .schedItems tr:last-child td {
+#eventArea .eventItems tr:nth-child(4) td, #eventArea .eventItems tr:nth-child(6) td, #eventArea .eventItems tr:nth-child(21) td, #eventArea .eventItems tr:last-child td {
   border-bottom: none;
 }
-#schedContainer #schedCornerHider #schedArea .schedItems .schedHeaderContainer {
+#eventArea .eventItems .eventHeaderContainer {
   padding: 0.5em 0;
   border-bottom: none;
 }
-#schedContainer #schedCornerHider #schedArea .schedItems .schedHeaderContainer .schedHeader {
+#eventArea .eventItems .eventHeaderContainer .eventHeader {
   box-sizing: border-box;
   width: 100%;
   text-align: center;
 }
-#schedContainer #schedCornerHider #schedArea .schedItems .schedHeaderContainer .schedHeader .schedHeaderLine {
+#eventArea .eventItems .eventHeaderContainer .eventHeader .eventHeaderLine {
   flex-grow: 1;
   border-top: 3px solid #303030;
 }
-#schedContainer #schedCornerHider #schedArea .schedItems .schedHeaderContainer .schedHeader h2 {
+#eventArea .eventItems .eventHeaderContainer .eventHeader h2 {
   margin: 0;
   padding: 0 1rem;
-}
-
-/* Event Section -------------------------------------------------------------------------------------*/
-#eventList .eventTitle {
-  padding-top: 0.25em;
-}
-#eventList .eventDeets {
-  text-indent: 1em;
 }
 
 /* FAQ Section ---------------------------------------------------------------------------------------*/
@@ -469,7 +444,7 @@ a {
   display: block;
   margin: 0.5em 0;
   width: 100%;
-  border: 0.2rem solid #f0f0f0;
+  border: 0.2rem solid #56a0d3;
   border-radius: 5px;
 }
 #main .faQuestion input {
@@ -481,8 +456,7 @@ a {
 #main .faQuestion .faqArrow {
   display: flex;
   justify-content: center;
-  color: #f768d7;
-  background-color: #f0f0f0;
+  background-color: #56a0d3;
 }
 #main .faQuestion .faqArrow * {
   transition-property: transform, color;
@@ -500,21 +474,21 @@ a {
   padding: 0.5em;
 }
 #main .faQuestion .faqContent a, #main .faQuestion .faqContent a:link, #main .faQuestion .faqContent a:visited, #main .faQuestion .faqContent a:hover, #main .faQuestion .faqContent a:active {
-  color: #f768d7;
+  color: #56a0d3;
 }
 #main .faQuestion input:checked + .faqArrow * {
-  color: #303030;
+  color: #f0f0f0;
   transform: rotate(180deg);
 }
 #main .faQuestion input:checked + .faqArrow + .faqContent {
-  max-height: 50rem;
+  max-height: 20em;
 }
 
 #main .faQuestion:hover {
   cursor: pointer;
 }
 #main .faQuestion:hover .faqArrow * {
-  color: #303030;
+  color: #f0f0f0;
 }
 
 /* Get Involved Section ------------------------------------------------------------------------------*/
@@ -777,66 +751,13 @@ a {
 }
 #main .involvementSpace #mc_embed_signup ::selection {
   color: #303030;
-  background-color: #f768d7;
+  background-color: #56a0d3;
 }
 #main .involvementSpace #mc_embed_signup input {
   background-color: #f0f0f0;
 }
 #main .involvementSpace #mc_embed_signup .button, #main .involvementSpace #mc_embed_signup .button:hover {
-  background-color: #f768d7;
-}
-
-/* Sponsors ------------------------------------------------------------------------------------------*/
-.sponsorList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-  padding: 0;
-  margin: 0 auto;
-  width: 80%;
-}
-.sponsorList li {
-  display: block;
-  width: auto;
-}
-.sponsorList li a {
-  display: block;
-  box-sizing: border-box;
-  padding: 4vh;
-  width: auto;
-  height: 100%;
-  overflow: hidden;
-}
-.sponsorList li a img {
-  width: auto;
-  height: 100%;
-}
-
-.sponsorList#bigSponsorList li.square {
-  height: 32vh;
-}
-
-.sponsorList#bigSponsorList li.flat {
-  height: 20vh;
-}
-
-.sponsorList#medSponsorList li.square {
-  height: 27vh;
-}
-
-.sponsorList#medSponsorList li.flat {
-  height: 17vh;
-}
-
-.sponsorList#smallSponsorList li.square {
-  height: 22vh;
-}
-
-.sponsorList#smallSponsorList li.flat {
-  height: 14vh;
+  background-color: #56a0d3;
 }
 
 /* Contact List --------------------------------------------------------------------------------------*/
@@ -871,14 +792,14 @@ a {
 }
 #contactList a:hover, #contactList a:active {
   color: #303030;
-  background-color: #f768d7;
+  background-color: #56a0d3;
 }
 
 /* Responsive Design! ------------------------------------------------------------------------------------*/
 /* Big Screens */
 @media only screen and (min-width: 3000px) {
   #graphic {
-    background-image: url("view_l.png");
+    background-image: url("night_m.png");
   }
 }
 /* Small or Tall Screens */
@@ -925,7 +846,7 @@ a {
   }
   #navMenu a:hover, #navMenu a:active {
     color: #303030;
-    background-color: #f768d7;
+    background-color: #56a0d3;
   }
 
   /* Graphic Duckie Resize */
@@ -971,63 +892,19 @@ a {
 /* Medium Screens --------------------------------------------------------------------------------*/
 @media only screen and (max-width: 650px) {
   /* Schedule Abbreviation */
-  #schedContainer #schedCornerHider #schedArea .schedItems {
+  #eventArea .eventItems {
     padding: 0 1.5rem;
-  }
-  #schedContainer #schedCornerHider #schedArea .schedItems td:nth-child(3) {
-    display: none;
-  }
-}
-/* Medium or Tall Screens --------------------------------------------------------------------------*/
-@media only screen and (max-width: 650px), only screen and (max-aspect-ratio: 1/1) {
-  /* Sponsorship Display Changes */
-  .sponsorList {
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-  .sponsorList li a {
-    padding: 3vh;
-  }
-
-  .sponsorList#bigSponsorList li.square {
-    height: 30vh;
-  }
-
-  .sponsorList#bigSponsorList li.flat {
-    height: 16vh;
-  }
-
-  .sponsorList#medSponsorList li.square {
-    height: 28vh;
-  }
-
-  .sponsorList#medSponsorList li.flat {
-    height: 14vh;
-  }
-
-  .sponsorList#smallSponsorList li.square {
-    height: 26vh;
-  }
-
-  .sponsorList#smallSponsorList li.flat {
-    height: 13vh;
   }
 }
 /* Super Tiny Screens ------------------------------------------------------------------------------*/
 @media only screen and (max-width: 500px) {
   #graphic {
-    background-image: url("view_s.png");
+    background-image: url("night_s.png");
   }
 
   #main .section .container {
     padding: 0.3em 1em;
   }
 }
-/* Super Super Tiny Screens -------------------------------------------------------------------------*/
-@media only screen and (max-width: 350px) {
-  #schedContainer #schedCornerHider #schedArea .schedItems td:nth-child(4) {
-    display: none;
-  }
-}
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=qu_ack.css.map */
